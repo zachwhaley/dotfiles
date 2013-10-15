@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/auto/stbu-tools/share'
+let g:netrw_dirhist_2='/users/tcoyne'
+let g:netrw_dirhist_3='/xsa_code/betazoid/qa/tools/performance_testing'
+let g:netrw_dirhist_4='/xsa_code/betazoid/xsa/infra/pdts/lib'
+let g:netrw_dirhist_5='/xsa_code/betazoid/qa/tools/performance_testing'
+let g:netrw_dirhist_6='/xsa_code/betazoid/xsa/infra/event-rpc'
+let g:netrw_dirhist_7='/xsa_code/betazoid/xsa/infra/event-rpc/src'
+let g:netrw_dirhist_8='/xsa_code/betazoid/xsa/infra/event-rpc'
+let g:netrw_dirhist_9='/xsa_code/betazoid/xsa/xsx-components/common-base/src'
