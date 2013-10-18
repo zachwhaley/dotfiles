@@ -23,7 +23,6 @@ set background=dark
 set t_Co=256
 syntax on
 colorscheme jellybeans 
-hi Search guibg=peru guifg=wheat
 " turn line numbers on
 set number
 " turn on smart case during searches
@@ -59,9 +58,9 @@ let OmniCpp_NamespaceSearch=1
 let OmniCpp_GlobalScopeSearch=1
 let OmniCpp_ShowAccess=1
 let OmniCpp_ShowPrototypeInAbbr=1 " show function parameters
-let OmniCpp_MayCompleteDot=1 " autocomplete after .
-let OmniCpp_MayCompleteArrow=1 " autocomplete after ->
-let OmniCpp_MayCompleteScope=1 " autocomplete after ::
+let OmniCpp_MayCompleteDot=1 " autocomplete after
+let OmniCpp_MayCompleteArrow=1 " autocomplete after
+let OmniCpp_MayCompleteScope=1 " autocomplete after
 let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / previous window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -71,39 +70,45 @@ set completeopt=menuone,menu,longest,preview
 " highlight member variables
 au CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
+au InsertEnter * setlocal cursorline
+au InsertLeave * setlocal nocursorline
+
 " status line
 set laststatus=2
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+"help file flag
+set statusline=%h
+"modified flag
+set statusline+=%m
+"read only flag
+set statusline+=%r
+"filetype
+set statusline+=%y
+"tail of the filename
+set statusline+=\ %t
+"left/right separator
+set statusline+=%=
+" Current line
+set statusline+=%l
+" Separator
+set statusline+=/
+" Total lines`
+set statusline+=%L
 
 " Enhanced keyboard mappings
 "
 " Exit insert mode
-imap ii <ESC>:w<CR>
+imap <C-i> <ESC>
+" Make normal directionals work in Insert Mode
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
 " Move text at cursor one line down
-nmap <C-J> i<CR>
+nmap <C-J> i<CR><ESC>
 " reverse tab
 nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 nmap <Tab> >>
-" in normal mode F1 will exit the file
-nmap <F2> :qa<CR>
-" in normal mode F2 will save the file
-nmap <F3> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F3> <ESC>:w<CR>i
-" F3 will save and exit the file
-nmap <F4> :xa<CR>
-imap <F4> <ESC>:xa<CR>
 " Toggle the tag list on and off with <F7>
 map <F6> :TlistToggle<CR>
 " open nerd tree thingy
