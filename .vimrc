@@ -97,7 +97,7 @@ set statusline+=%L
 " Enhanced keyboard mappings
 "
 " Exit insert mode
-imap <C-i> <ESC>
+" Ctrl-[ is the same as Esc
 " Make normal directionals work in Insert Mode
 imap <C-h> <Left>
 imap <C-j> <Down>
