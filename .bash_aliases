@@ -1,0 +1,10 @@
+alias ..='cd ..'
+alias vi='vim'
+alias grep='grep --color=auto'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias get='sudo apt-get'
+alias open='nautilus'
+
+alias dev='ssh ast-xsadev-01'

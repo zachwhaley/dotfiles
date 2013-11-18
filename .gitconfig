@@ -1,0 +1,13 @@
+[user]
+	name = Zach Whaley
+	email = zachbwhaley@gmail.com
+[diff]
+    external = ~/.gitrc/git_diff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[push]
+	default = simple
+[color]
+	ui = true
