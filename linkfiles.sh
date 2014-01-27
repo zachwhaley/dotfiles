@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A list of files to exclude from symoblic linking
-exclude=("README.md")
+exclude=("README.md" "linkfiles.sh")
 gitdir=$(pwd)
 
 for file in $(git ls-files); do
