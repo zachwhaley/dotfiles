@@ -1,13 +1,13 @@
 [user]
-	name = Zach Whaley
-	email = zachbwhaley@gmail.com
+    email = zachbwhaley@gmail.com
+    name = Zach Whaley
 [diff]
-    external = ~/.gitrc/git_diff
+    tool = vimdiff
+[merge]
+    tool = vimdiff
 [difftool]
-	prompt = false
-[alias]
-	d = difftool
+    prompt = false
 [push]
-	default = simple
+    default = simple
 [color]
-	ui = true
+    ui = auto

@@ -9,6 +9,11 @@ set nosmartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
+" Tabs 2 in JavaScript & HTML
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ejs setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
 set expandtab        " use spaces in place of tabs
 set smarttab
 " make tabs readable when viewed
@@ -44,7 +49,7 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set foldmethod=manual
 
 " Remove trailing whitespace in code files.
-autocmd FileType c,cpp,java,py autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " ctags
 set tags=./tags,./TAGS,tags;,TAGS;
