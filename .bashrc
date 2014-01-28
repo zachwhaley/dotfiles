@@ -96,7 +96,8 @@ if ! shopt -oq posix; then
 fi
 
 # Added for Android Studio
-#export ANDROID_HOME=/usr/local/adt-bundle/sdk
-#PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+export ANDROID_HOME=/opt/android-studio/sdk
+PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export PATH
