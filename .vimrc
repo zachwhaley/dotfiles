@@ -27,7 +27,7 @@ set textwidth=120
 set background=dark
 set t_Co=256
 syntax on
-colorscheme jellybeans 
+colorscheme jellybeans
 " turn line numbers on
 set number
 " turn on smart case during searches
@@ -39,7 +39,7 @@ set nohls
 set incsearch
 " show cursor position at all times
 set ruler
-" set the mouse to highlight things correctly 
+" set the mouse to highlight things correctly
 set mouse=a
 " highlight matching braces
 set showmatch
@@ -52,7 +52,7 @@ set foldmethod=manual
 autocmd BufWritePre * :%s/\s\+$//e
 
 " ctags
-set tags=./tags,./TAGS,tags;,TAGS;
+set tags=./.tags,./.TAGS,.tags;,.TAGS;
 
 " Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
 " This offers intelligent C++ completion when typing ... .->. or <C-o>
@@ -119,7 +119,7 @@ map <F6> :TlistToggle<CR>
 " open nerd tree thingy
 map <F7> :NERDTreeToggle<CR>
 " recreate tags file
-map <F9> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+map <F9> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q -f .tags .<CR>
 " goto definition
 map <F11> <C-]>
 " see definition and declaration
