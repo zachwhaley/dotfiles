@@ -10,10 +10,10 @@ contains () {
 
 # A list of files to exclude from symoblic linking
 exclude=( "README.md" "linkfiles.sh" )
-gitdir=$(pwd)
 
 for file in $(git ls-files); do
     if ! contains $file ${exclude[@]}; then
-        ln -fTs $gitdir/$file ~/$file
+        mkdir -p ~/$(dirname $file)
+        ln -vfTs $(pwd)/$file ~/$file
     fi
 done
