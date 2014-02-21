@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # A "|" separated list of files to exclude from symoblic linking
-exclude="\b(\.git|README\.md|linkfiles\.sh)\b"
+exclude="\b(\.git|README\.md|dot)\b"
 files=$(ls -A | egrep -v $exclude)
 
 install() {
