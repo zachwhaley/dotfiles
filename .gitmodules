@@ -7,3 +7,6 @@
 [submodule "nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "OmniCppComplete"]
+	path = vim/bundle/OmniCppComplete
+	url = git@github.com:vim-scripts/OmniCppComplete.git
