@@ -6,13 +6,13 @@ files=$(ls -A | egrep -v $exclude)
 
 install() {
     for file in $files; do
-        ln -vfs $(pwd)/$file ~/$file
+        ln -vfs $(pwd)/$file ~/.$file
     done
 }
 
 remove() {
-    for file in $(ls -A | egrep -v $exclude); do
-        rm -vf ~/$file
+    for file in $files; do
+        rm -vf ~/.$file
     done
 }
 
