@@ -1,8 +1,30 @@
-#!/bin/bash
+#!/bin/sh
 
 # A "|" separated list of files to exclude from symoblic linking
 exclude="\b(\.git|README\.md|linkfiles\.sh)\b"
+files=$(ls -A | egrep -v $exclude)
 
-for file in $(ls -A | egrep -v $exclude); do
-    ln -vfs $(pwd)/$file ~/$file
-done
+install() {
+    for file in $files; do
+        ln -vfs $(pwd)/$file ~/$file
+    done
+}
+
+remove() {
+    for file in $(ls -A | egrep -v $exclude); do
+        rm -vf ~/$file
+    done
+}
+
+case $1 in
+    "install" )
+        remove
+        install
+        ;;
+    "remove" )
+        remove
+        ;;
+    * )
+        echo "$0 install remove"
+        ;;
+esac
