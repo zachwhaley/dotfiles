@@ -10,6 +10,7 @@
 [submodule "OmniCppComplete"]
 	path = vim/bundle/OmniCppComplete
 	url = git@github.com:vim-scripts/OmniCppComplete.git
+    ignore = untracked
 [submodule "jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
