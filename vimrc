@@ -118,7 +118,7 @@ nmap <Tab> >>
 " Toggle the tag list on and off with <F7>
 map <F6> :TlistToggle<CR>
 " open nerd tree thingy
-map <F7> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 " recreate tags file
 map <F9> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q -f .tags .<CR>
 " goto definition
