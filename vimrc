@@ -1,6 +1,8 @@
-filetype on
-filetype plugin on
-filetype indent on
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on
 
 " use indentation of previous line
 set autoindent
@@ -26,7 +28,6 @@ set textwidth=120
 " turn syntax highlighting on
 set background=dark
 set t_Co=256
-syntax on
 colorscheme jellybeans
 " turn line numbers on
 set number
