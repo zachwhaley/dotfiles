@@ -23,3 +23,6 @@
 [submodule "taglist.vim"]
 	path = vim/bundle/taglist.vim
 	url = git@github.com:vim-scripts/taglist.vim.git
+[submodule "vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git@github.com:tpope/vim-markdown.git
