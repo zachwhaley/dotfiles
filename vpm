@@ -29,9 +29,10 @@ case $1 in
         update
         ;;
     * )
+        prog=$(basename $0)
         echo "Usage:"
-        echo "vpm install [git repo]"
-        echo "vpm remove  [git repo]"
-        echo "vpm update"
+        echo "$prog install <git URI>"
+        echo "$prog remove  <git URI>"
+        echo "$prog update"
         ;;
 esac
