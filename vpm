@@ -1,0 +1,36 @@
+#!/bin/bash
+
+VPM_HOME=~/dotfiles
+
+install() {
+    name=$(basename $1 | sed 's/\.git//')
+    git submodule add --name $name $1 vim/bundle/$name
+    git commit -em "Installed $name"
+}
+
+remove() {
+    echo remove
+}
+
+update() {
+    git submodule foreach git pull origin master
+}
+
+cd $VPM_HOME
+case $1 in
+    "install" )
+        install $2
+        ;;
+    "remove" )
+        remove $2
+        ;;
+    "update" )
+        update
+        ;;
+    * )
+        echo "Usage:"
+        echo "vpm install [git repo]"
+        echo "vpm remove  [git repo]"
+        echo "vpm update"
+        ;;
+esac
