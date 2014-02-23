@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A "|" separated list of files to exclude from symoblic linking
-exclude="dot|README.md"
+exclude="dot|vpm|README.md"
 files=$(ls | egrep -v "\b($exclude)\b")
 
 install() {
