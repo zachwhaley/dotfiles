@@ -1,12 +1,15 @@
 [submodule "vim-pathogen"]
 	path = vim/bundle/vim-pathogen
 	url = git@github.com:tpope/vim-pathogen.git
+    ignore = untracked
 [submodule "a.vim"]
 	path = vim/bundle/a.vim
 	url = git@github.com:vim-scripts/a.vim.git
+    ignore = untracked
 [submodule "nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+    ignore = untracked
 [submodule "OmniCppComplete"]
 	path = vim/bundle/OmniCppComplete
 	url = git@github.com:vim-scripts/OmniCppComplete.git
@@ -14,15 +17,20 @@
 [submodule "jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
+    ignore = untracked
 [submodule "vim-sensible"]
 	path = vim/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
+    ignore = untracked
 [submodule "syntastic"]
 	path = vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+    ignore = untracked
 [submodule "taglist.vim"]
 	path = vim/bundle/taglist.vim
 	url = git@github.com:vim-scripts/taglist.vim.git
+    ignore = untracked
 [submodule "vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown.git
+    ignore = untracked
