@@ -71,7 +71,10 @@ let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / previous window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-" setlocal omnifunc=omni#cpp#complete#Main
+
+" C++11 for Syntastic
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " highlight member variables
 au CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
