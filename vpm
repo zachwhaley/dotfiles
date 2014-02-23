@@ -14,6 +14,7 @@ remove() {
 
 update() {
     git submodule foreach git pull origin master
+    git commit -eam "Updated Vim Plugins"
 }
 
 cd $VPM_HOME
