@@ -37,6 +37,7 @@ set number
 
 " turn on smart case during searches
 set smartcase
+set ignorecase
 
 " Use the mouse
 set mouse=a
