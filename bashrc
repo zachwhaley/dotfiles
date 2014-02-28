@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-export TERM=xterm-color
+export TERM=xterm-256color
 
 # Color definitions
 txtblk='\[\033[00;30m\]' # Black - Regular

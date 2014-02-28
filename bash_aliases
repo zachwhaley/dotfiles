@@ -10,6 +10,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias mc='emacs -nw'
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CFlh'
