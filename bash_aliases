@@ -10,7 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias me='emacs -nw'
+alias emacs='emacs -nw'
 
 alias ll='ls -alF'
 alias la='ls -A'
