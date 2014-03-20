@@ -17,9 +17,8 @@ autocmd Filetype ejs setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 "" Colors
-set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
 "" Highlights
 set showmatch " highlight matching braces
