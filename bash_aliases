@@ -1,4 +1,5 @@
-alias ..='cd ..'
+alias apt-get='sudo apt-get'
+alias yum='sudo yum'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
