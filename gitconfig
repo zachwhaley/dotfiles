@@ -11,3 +11,5 @@
 	prompt = false
 [push]
 	default = simple
+[core]
+	editor = vim
