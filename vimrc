@@ -18,7 +18,7 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 "" Colors
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 "" Highlights
 set showmatch " highlight matching braces
