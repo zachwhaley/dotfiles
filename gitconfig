@@ -13,3 +13,7 @@
 	default = simple
 [core]
 	editor = vim
+[alias]
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
