@@ -1,5 +1,6 @@
 alias apt-get='sudo apt-get'
 alias yum='sudo yum'
+alias pip='sudo pip'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
