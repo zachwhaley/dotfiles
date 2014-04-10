@@ -1,4 +1,18 @@
-vim
-===
+dotfiles
+========
 
-My Vim settings and files
+My dot files.
+
+Install
+-------
+
+```bash
+$ ./dot install
+```
+
+Remove
+------
+
+```bash
+$ ./dot remove
+```
