@@ -18,3 +18,5 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
+	outgoing = log origin/HEAD..
+	incoming = log ..origin/HEAD
