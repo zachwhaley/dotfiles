@@ -74,6 +74,11 @@ imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
+" Window Navigation
+nmap <silent> <S-Up> :wincmd k<CR>
+nmap <silent> <S-Down> :wincmd j<CR>
+nmap <silent> <S-Left> :wincmd h<CR>
+nmap <silent> <S-Right> :wincmd l<CR>
 " Move text at cursor one line down
 nmap <C-J> i<CR><ESC>
 " reverse tab
