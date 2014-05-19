@@ -9,7 +9,11 @@ install() {
 }
 
 remove() {
-    echo remove
+    module=vim/bundle/$1
+    git submodule deinit $module
+    git rm $module
+    git add .gitmodules
+    git commit -em "Removed $1"
 }
 
 update() {
