@@ -4,6 +4,7 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
+set nocompatible
 
 "" Indenting
 set nosmartindent " use intelligent indentation for C
