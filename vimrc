@@ -81,6 +81,11 @@ nmap <C-J> i<CR><ESC>
 nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 nmap <Tab> >>
+" A touch of Emacs
+imap <C-a> <Home>
+imap <C-e> <End>
+nmap <C-a> <Home>
+nmap <C-e> <End>
 
 " open nerdtree
 map <C-n> :NERDTreeToggle<CR>
