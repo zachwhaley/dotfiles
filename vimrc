@@ -23,8 +23,7 @@ colorscheme solarized
 
 "" Highlights
 set showmatch " highlight matching braces
-" highlight member variables
-au CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" Highlight current line when Inserting
 au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
 au InsertLeave * setlocal nocursorline " while moving, do not highlight the current line
 
