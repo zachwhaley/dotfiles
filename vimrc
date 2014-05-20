@@ -55,6 +55,11 @@ set tags=./.tags,./.TAGS,.tags;,.TAGS;
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
+"" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
 "" Keyboard mappings
 " Make normal directionals work in Insert Mode
 imap <C-h> <Left>
