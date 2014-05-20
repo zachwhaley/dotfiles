@@ -51,10 +51,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 "" ctags
 set tags=./.tags,./.TAGS,.tags;,.TAGS;
 
-"" C++11 for Syntastic
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-
 "" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
