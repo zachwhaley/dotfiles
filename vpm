@@ -9,11 +9,10 @@ install() {
 }
 
 remove() {
-    module=vim/bundle/$1
-    git submodule deinit $module
-    git rm $module
+    git submodule deinit $1
+    git rm $1
     git add .gitmodules
-    git commit -em "Removed $1"
+    git commit -em "Removed $(basename $1)"
 }
 
 update() {
@@ -36,7 +35,7 @@ case $1 in
         prog=$(basename $0)
         echo "Usage:"
         echo "$prog install <git URI>"
-        echo "$prog remove  <git URI>"
+        echo "$prog remove  <submodule directory>"
         echo "$prog update"
         ;;
 esac
