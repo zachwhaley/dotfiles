@@ -43,3 +43,6 @@
 [submodule "auto-pairs"]
 	path = vim/bundle/auto-pairs
 	url = git@github.com:zachwhaley/auto-pairs.git
+[submodule "vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = git@github.com:zachwhaley/vim-snippets.git
