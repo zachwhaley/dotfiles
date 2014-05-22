@@ -77,6 +77,8 @@ nmap <C-J> i<CR><ESC>
 nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 nmap <Tab> >>
+" Yank to end of line
+map Y y$
 " A touch of Emacs
 imap <C-a> <Home>
 imap <C-e> <End>
