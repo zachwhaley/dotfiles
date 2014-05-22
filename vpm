@@ -16,8 +16,9 @@ remove() {
 }
 
 update() {
-    git submodule foreach git pull origin master
-    git commit -eam "Updated Vim Plugins"
+    git pull && git submodule update --init --recursive
+    git add vim/bundle
+    git commit -em "Updated Vim Plugins"
 }
 
 cd $VPM_HOME
