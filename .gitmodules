@@ -31,9 +31,6 @@
 [submodule "ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "vim-snippets"]
-	path = vim/bundle/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule "vim-cpp-enhanced-highlight"]
 	path = vim/bundle/vim-cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight.git
