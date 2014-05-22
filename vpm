@@ -9,10 +9,12 @@ install() {
 }
 
 remove() {
+    name=$(basename $1)
     git submodule deinit $1
-    git rm $1
+    git rm -f $1
+    git rm -rf .git/modules/$name
     git add .gitmodules
-    git commit -em "Removed $(basename $1)"
+    git commit -em "Removed $name"
 }
 
 update() {
