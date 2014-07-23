@@ -80,9 +80,9 @@ nmap <Tab> >>
 " Yank to end of line
 map Y y$
 " A touch of Emacs
-imap <C-a> <Home>
+imap <C-a> <Esc>I
 imap <C-e> <End>
-nmap <C-a> <Home>
+nmap <C-a> ^
 nmap <C-e> <End>
 
 " open nerdtree
