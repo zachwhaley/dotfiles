@@ -69,10 +69,10 @@ nmap <silent> <S-Up> :wincmd k<CR>
 nmap <silent> <S-Down> :wincmd j<CR>
 nmap <silent> <S-Left> :wincmd h<CR>
 nmap <silent> <S-Right> :wincmd l<CR>
-imap <silent> <S-Up> :wincmd k<CR>
-imap <silent> <S-Down> :wincmd j<CR>
-imap <silent> <S-Left> :wincmd h<CR>
-imap <silent> <S-Right> :wincmd l<CR>
+imap <silent> <S-Up> <ESC>:wincmd k<CR>
+imap <silent> <S-Down> <ESC>:wincmd j<CR>
+imap <silent> <S-Left> <ESC>:wincmd h<CR>
+imap <silent> <S-Right> <ESC>:wincmd l<CR>
 " Move text at cursor one line down
 nmap <C-J> i<CR><ESC>
 " reverse tab
