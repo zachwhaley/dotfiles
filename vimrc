@@ -31,6 +31,10 @@ au InsertLeave * setlocal nocursorline " while moving, do not highlight the curr
 "" wrap lines at 120 chars.
 set wrapmargin=120
 set textwidth=120
+if version >= 703
+    set colorcolumn=120
+    highlight ColorColumn ctermbg=0
+endif
 
 " turn line numbers on
 set number
