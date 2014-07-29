@@ -22,6 +22,7 @@ set background=dark
 colorscheme solarized
 
 "" Highlights
+set hlsearch
 set showmatch " highlight matching braces
 " Highlight current line when Inserting
 au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
