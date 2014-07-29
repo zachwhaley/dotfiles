@@ -56,10 +56,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 "" ctags
 set tags=./.tags,./.TAGS,.tags;,.TAGS;
 
-"" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+set completeopt=menuone,menu,longest,preview
 
 "" Keyboard mappings
 " Make normal directionals work in Insert Mode
