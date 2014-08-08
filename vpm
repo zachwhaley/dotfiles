@@ -19,6 +19,7 @@ remove() {
 
 update() {
     git pull && git submodule update --init --recursive
+    git submodule foreach git pull origin master
     git add vim/bundle
     git commit -em "Updated Vim Plugins"
 }
