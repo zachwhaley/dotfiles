@@ -84,6 +84,11 @@ if [ -f ~/.ciscorc ]; then
     . ~/.ciscorc
 fi
 
+# Mac OSX things
+if [ -f ~/.macosxrc ]; then
+    . ~/.macosxrc
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -104,6 +109,6 @@ PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export P4CONFIG=.p4config
 export P4IGNORE=.p4ignore
 export P4EDITOR=vim
-export P4DIFF=vimdiff
+export P4DIFF=colordiff
 
 export PATH
