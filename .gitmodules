@@ -55,3 +55,6 @@
 [submodule "vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
