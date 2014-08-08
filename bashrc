@@ -109,6 +109,6 @@ PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export P4CONFIG=.p4config
 export P4IGNORE=.p4ignore
 export P4EDITOR=vim
-export P4DIFF=vimdiff
+export P4DIFF=colordiff
 
 export PATH
