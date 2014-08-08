@@ -2,7 +2,8 @@
 
 # A "|" separated list of files to exclude from symoblic linking
 exclude="dot|vpm|README.md"
-install_log=/var/local/dot_install.log
+install_dir=/var/local
+install_log=$install_dir/dot_install.log
 
 install() {
     files=$(ls | egrep -v "\b($exclude)\b")
@@ -13,6 +14,7 @@ install() {
 }
 
 remove() {
+    sudo mkdir -p $install_dir
     sudo touch $install_log
     files=$(cat $install_log)
     for file in $files; do
