@@ -61,3 +61,6 @@
 [submodule "vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "prezto"]
+	path = prezto
+	url = git@github.com:zachwhaley/prezto.git
