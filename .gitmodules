@@ -61,3 +61,6 @@
 [submodule "prezto"]
 	path = zprezto.symlink
 	url = git@github.com:zachwhaley/prezto.git
+[submodule "nerdcommenter"]
+	path = vim.symlink/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
