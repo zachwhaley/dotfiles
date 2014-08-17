@@ -108,11 +108,15 @@ install_dotfiles () {
 }
 
 setup_zsh () {
-  # From prezto README on installation
+  info 'installing Zsh files'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  # Mostly from Prezto README on installation
   setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N)
+  for src in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N)
   do
-    ln -vfs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    link_file "$src" "${ZDOTDIR:-$HOME}/.${src:t}"
   done
   chsh -s /bin/zsh
 }
