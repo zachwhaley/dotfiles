@@ -58,9 +58,6 @@
 [submodule "vim-repeat"]
 	path = vim.symlink/bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
-[submodule "vim-commentary"]
-	path = vim.symlink/bundle/vim-commentary
-	url = git@github.com:tpope/vim-commentary.git
 [submodule "prezto"]
 	path = zprezto.symlink
 	url = git@github.com:zachwhaley/prezto.git
