@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-VPM_HOME=~/dotfiles
+cd $(dirname $0)
+DOTFILES_ROOT=$(pwd)
 
 install() {
     name=$(basename $1 | sed 's/\.git//')
-    git submodule add --name $name $1 vim/bundle/$name
+    git submodule add --name $name $1 vim.symlink/bundle/$name
     git commit -em "Installed $name"
 }
 
@@ -20,11 +21,10 @@ remove() {
 update() {
     git pull && git submodule update --init --recursive
     git submodule foreach git pull origin master
-    git add vim/bundle
+    git add vim.symlink/bundle
     git commit -em "Updated Vim Plugins"
 }
 
-cd $VPM_HOME
 case $1 in
     "install" )
         install $2
