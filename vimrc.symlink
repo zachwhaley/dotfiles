@@ -97,6 +97,8 @@ inoremap <C-a> <Esc>I
 inoremap <C-e> <End>
 nnoremap <C-a> ^
 nnoremap <C-e> <End>
+vnoremap <C-a> ^
+vnoremap <C-e> $
 
 " open nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
