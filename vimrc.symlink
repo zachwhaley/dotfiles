@@ -64,6 +64,9 @@ set tags=./.tags,./.TAGS,.tags;,.TAGS;
 set completeopt=menuone,menu,longest,preview
 
 "" Keyboard mappings
+" <leader> is ";"
+let mapleader=";"
+
 " Make normal directionals work in Insert Mode
 imap <C-h> <Left>
 imap <C-j> <Down>
