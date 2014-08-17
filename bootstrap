@@ -118,7 +118,10 @@ setup_zsh () {
   do
     link_file "$src" "${ZDOTDIR:-$HOME}/.${src:t}"
   done
-  chsh -s /bin/zsh
+  if [[ ! "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]
+  then
+    chsh -s /bin/zsh
+  fi
 }
 
 install_dotfiles
