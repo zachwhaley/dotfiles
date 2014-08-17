@@ -50,7 +50,10 @@ set mouse=a
 
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
-set foldmethod=manual
+
+" Folding
+set nofoldenable "Don't fold by default"
+set foldmethod=syntax
 
 " Remove trailing whitespace in code files.
 autocmd BufWritePre * :%s/\s\+$//e
