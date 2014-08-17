@@ -1,66 +1,66 @@
 [submodule "vim-pathogen"]
-	path = vim/bundle/vim-pathogen
+	path = vim.symlink/bundle/vim-pathogen
 	url = git@github.com:tpope/vim-pathogen.git
     ignore = untracked
 [submodule "a.vim"]
-	path = vim/bundle/a.vim
+	path = vim.symlink/bundle/a.vim
 	url = git@github.com:vim-scripts/a.vim.git
     ignore = untracked
 [submodule "nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim.symlink/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
     ignore = untracked
 [submodule "vim-sensible"]
-	path = vim/bundle/vim-sensible
+	path = vim.symlink/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
     ignore = untracked
 [submodule "taglist.vim"]
-	path = vim/bundle/taglist.vim
+	path = vim.symlink/bundle/taglist.vim
 	url = git@github.com:vim-scripts/taglist.vim.git
     ignore = untracked
 [submodule "vim-markdown"]
-	path = vim/bundle/vim-markdown
+	path = vim.symlink/bundle/vim-markdown
 	url = git@github.com:tpope/vim-markdown.git
     ignore = untracked
 [submodule "vim-protobuf"]
-	path = vim/bundle/vim-protobuf
+	path = vim.symlink/bundle/vim-protobuf
 	url = git@github.com:uarun/vim-protobuf.git
 [submodule "vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
+	path = vim.symlink/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "vim-cpp-enhanced-highlight"]
-	path = vim/bundle/vim-cpp-enhanced-highlight
+	path = vim.symlink/bundle/vim-cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight.git
 [submodule "vim-surround"]
-	path = vim/bundle/vim-surround
+	path = vim.symlink/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
 [submodule "vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim.symlink/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
 [submodule "auto-pairs"]
-	path = vim/bundle/auto-pairs
+	path = vim.symlink/bundle/auto-pairs
 	url = git@github.com:zachwhaley/auto-pairs.git
 [submodule "vim-snippets"]
-	path = vim/bundle/vim-snippets
+	path = vim.symlink/bundle/vim-snippets
 	url = git@github.com:zachwhaley/vim-snippets.git
 [submodule "tlib_vim"]
-	path = vim/bundle/tlib_vim
+	path = vim.symlink/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim-addon-mw-utils"]
-	path = vim/bundle/vim-addon-mw-utils
+	path = vim.symlink/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim-snipmate"]
-	path = vim/bundle/vim-snipmate
+	path = vim.symlink/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "vim-unimpaired"]
-	path = vim/bundle/vim-unimpaired
+	path = vim.symlink/bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
 [submodule "vim-repeat"]
-	path = vim/bundle/vim-repeat
+	path = vim.symlink/bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
 [submodule "vim-commentary"]
-	path = vim/bundle/vim-commentary
+	path = vim.symlink/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
 [submodule "prezto"]
-	path = prezto
+	path = zprezto.symlink
 	url = git@github.com:zachwhaley/prezto.git
