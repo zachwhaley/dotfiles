@@ -20,3 +20,4 @@
 	co = checkout
 	outgoing = log origin/master..
 	incoming = log ..origin/master
+	dif = diff
