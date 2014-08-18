@@ -45,13 +45,13 @@
 	url = git@github.com:zachwhaley/vim-snippets.git
 [submodule "tlib_vim"]
 	path = vim.symlink/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
+	url = git@github.com:tomtom/tlib_vim.git
 [submodule "vim-addon-mw-utils"]
 	path = vim.symlink/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
 [submodule "vim-snipmate"]
 	path = vim.symlink/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+	url = git@github.com:garbas/vim-snipmate.git
 [submodule "vim-unimpaired"]
 	path = vim.symlink/bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
