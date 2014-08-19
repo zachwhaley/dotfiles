@@ -57,8 +57,8 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set nofoldenable "Don't fold by default"
 set foldmethod=syntax
 
-" Remove trailing whitespace in code files.
-autocmd BufWritePre * :%s/\s\+$//e
+" Show trailing whitespace and tabs
+set list lcs=trail:·,tab:▸▸
 
 "" ctags
 set tags=./.tags,./.TAGS,.tags;,.TAGS;
