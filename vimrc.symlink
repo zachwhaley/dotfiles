@@ -25,6 +25,11 @@ autocmd Filetype vim setlocal ts=2 sts=2 sw=2
 set background=dark
 colorscheme solarized
 
+" Status line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:gitgutter_sign_column_always = 1
+
 "" Highlights
 set hlsearch
 set showmatch " highlight matching braces
