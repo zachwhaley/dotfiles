@@ -64,3 +64,6 @@
 [submodule "nerdcommenter"]
 	path = vim.symlink/bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "vim-fugitive"]
+	path = vim.symlink/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
