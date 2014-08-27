@@ -32,11 +32,11 @@ set showmatch " highlight matching braces
 au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
 au InsertLeave * setlocal nocursorline " while moving, do not highlight the current line
 
-"" wrap lines at 120 chars.
-set wrapmargin=120
-set textwidth=120
+"" wrap lines at 95 chars.
+set wrapmargin=95
+set textwidth=95
 if version >= 703
-  set colorcolumn=120
+  set colorcolumn=95
   highlight ColorColumn ctermbg=0
 endif
 
