@@ -67,3 +67,6 @@
 [submodule "vim-fugitive"]
 	path = vim.symlink/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim-gitgutter"]
+	path = vim.symlink/bundle/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
