@@ -2,10 +2,6 @@
 	path = vim.symlink/bundle/vim-pathogen
 	url = git@github.com:tpope/vim-pathogen.git
     ignore = untracked
-[submodule "a.vim"]
-	path = vim.symlink/bundle/a.vim
-	url = git@github.com:vim-scripts/a.vim.git
-    ignore = untracked
 [submodule "nerdtree"]
 	path = vim.symlink/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
