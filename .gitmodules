@@ -73,6 +73,3 @@
 [submodule "vim-signify"]
 	path = vim.symlink/bundle/vim-signify
 	url = git@github.com:mhinz/vim-signify.git
-[submodule "tmuxline.vim"]
-	path = vim.symlink/bundle/tmuxline.vim
-	url = git@github.com:edkolev/tmuxline.vim.git
