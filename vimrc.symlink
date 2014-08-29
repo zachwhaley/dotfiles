@@ -96,8 +96,6 @@ nnoremap <silent> <C-l> :wincmd l<CR>
 " Tab Navigation
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
-" Move text at cursor one line down
-nnoremap <C-J> i<CR><ESC>
 " reverse tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
