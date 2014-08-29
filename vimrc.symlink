@@ -89,14 +89,10 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 " Window Navigation
-nnoremap <silent> <S-Up> :wincmd k<CR>
-nnoremap <silent> <S-Down> :wincmd j<CR>
-nnoremap <silent> <S-Left> :wincmd h<CR>
-nnoremap <silent> <S-Right> :wincmd l<CR>
-inoremap <silent> <S-Up> <ESC>:wincmd k<CR>
-inoremap <silent> <S-Down> <ESC>:wincmd j<CR>
-inoremap <silent> <S-Left> <ESC>:wincmd h<CR>
-inoremap <silent> <S-Right> <ESC>:wincmd l<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 " Tab Navigation
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
