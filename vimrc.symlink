@@ -34,8 +34,8 @@ autocmd BufEnter * sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Sy Source control options
-let g:signify_sign_overwrite = 1
-let g:signify_vcs_list = [ 'git', 'perforce', 'cvs' ]
+" let g:signify_sign_overwrite = 1
+let g:signify_vcs_list = [ 'git', 'perforce' ]
 let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
