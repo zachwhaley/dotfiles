@@ -66,3 +66,6 @@
 [submodule "vim-signify"]
 	path = vim.symlink/bundle/vim-signify
 	url = git@github.com:mhinz/vim-signify.git
+[submodule "a.vim"]
+	path = vim.symlink/bundle/a.vim
+	url = git@github.com:vim-scripts/a.vim.git
