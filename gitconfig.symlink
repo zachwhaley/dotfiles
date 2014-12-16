@@ -21,3 +21,4 @@
 	outgoing = log origin/master..
 	incoming = log ..origin/master
 	dif = diff
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
