@@ -21,3 +21,4 @@
 	outgoing = log origin/master..
 	incoming = log ..origin/master
 	dif = diff
+	sync = !git fetch upstream && git merge upstream/master
