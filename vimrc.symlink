@@ -26,6 +26,13 @@ set background=dark
 colorscheme solarized
 highlight SignColumn ctermbg=8
 
+"" GVim
+set guifont=Inconsolata\ Medium\ 12
+"remove menu bar
+set guioptions-=m
+"remove toolbar
+set guioptions-=T
+
 " Status line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
