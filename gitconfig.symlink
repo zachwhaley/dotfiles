@@ -24,3 +24,4 @@
 	dif = diff
 	sync = !git fetch upstream && git merge upstream/master
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+	comit = commit
