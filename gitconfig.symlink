@@ -15,7 +15,7 @@
 	editor = vim
 [alias]
 	st = status
-	l = log --oneline --graph
+	lg = log --oneline --graph --decorate=short
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
