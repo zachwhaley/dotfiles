@@ -5,7 +5,7 @@ DOTFILES_ROOT=$(pwd)
 
 install() {
   name=$(basename $1 | sed 's/\.git//')
-  git submodule add --name $name $1 vim.symlink/bundle/$name
+  git submodule add --branch master --name $name $1 vim.symlink/bundle/$name
   git commit -em "Installed $name"
 }
 
@@ -19,8 +19,8 @@ remove() {
 }
 
 update() {
-  git pull && git submodule update --init --recursive
-  git submodule foreach git pull origin master
+  git pull
+  git submodule update --init --recursive --remote
   git add vim.symlink/bundle
   git commit -em "Updated Vim Plugins"
 }
