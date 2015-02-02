@@ -69,3 +69,7 @@
 [submodule "a.vim"]
 	path = vim.symlink/bundle/a.vim
 	url = git@github.com:vim-scripts/a.vim.git
+[submodule "vim-fugitive"]
+	path = vim.symlink/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+	branch = master
