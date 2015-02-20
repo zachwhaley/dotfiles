@@ -134,5 +134,3 @@ vnoremap <C-e> $
 
 " open nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
-" recreate tags file
-nnoremap <C-F12> :!/usr/bin/ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q -f .tags .<CR>
