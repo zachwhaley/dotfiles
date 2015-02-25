@@ -15,20 +15,4 @@ $ ./bootstrap
 Vim plugins
 ------------------
 
-Install
-
-```bash
-$ ./vpm install git@github.com:tpope/vim-sensible.git
-```
-
-Update
-
-```bash
-$ ./vpm update
-```
-
-Remove
-
-```bash
-$ ./vpm remove vim.symlink/bundle/vim-sensible
-```
+See [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
