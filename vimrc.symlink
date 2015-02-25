@@ -161,3 +161,5 @@ vnoremap <C-e> $
 
 " open nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
+" CtrlP
+nmap <C-p> :CtrlP<CR>
