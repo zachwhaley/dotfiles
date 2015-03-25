@@ -79,6 +79,7 @@ let g:signify_sign_delete = '-'
 set hlsearch
 set showmatch " highlight matching braces
 let g:cpp_class_scope_highlight = 1
+let python_highlight_all = 1
 " Highlight current line when Inserting
 au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
 au InsertLeave * setlocal nocursorline " while moving, do not highlight the current line
