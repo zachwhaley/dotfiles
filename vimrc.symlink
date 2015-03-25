@@ -137,6 +137,7 @@ set completeopt=menuone,menu,longest,preview
 "" Keyboard mappings
 " <leader> is ";"
 let mapleader=";"
+set wildmode=list:longest,full
 
 " Make normal directionals work in Insert Mode
 imap <C-h> <Left>
