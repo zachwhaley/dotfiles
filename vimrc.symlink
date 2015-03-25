@@ -116,7 +116,7 @@ set nofoldenable "Don't fold by default"
 set foldmethod=syntax
 
 " Show trailing whitespace and tabs
-set list lcs=trail:·,tab:▸▸
+set list listchars=tab:▸\ ,trail:·
 
 "" ctags
 set tags=./.tags,./.TAGS,.tags;,.TAGS;
