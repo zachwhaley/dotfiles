@@ -113,6 +113,7 @@ setup_zsh () {
   local overwrite_all=false backup_all=false skip_all=false
 
   # Mostly from Prezto README on installation
+  git submodule update --init --recursive
   setopt EXTENDED_GLOB
   for src in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N)
   do
