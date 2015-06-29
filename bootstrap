@@ -108,7 +108,7 @@ install_dotfiles () {
 }
 
 setup_zsh () {
-  info 'installing Zsh files'
+  info 'installing Zsh files\n'
 
   local overwrite_all=false backup_all=false skip_all=false
 
