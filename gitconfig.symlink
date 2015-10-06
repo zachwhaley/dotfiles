@@ -13,6 +13,7 @@
 	default = simple
 [core]
 	editor = vim
+	excludesfile = /home/zwhaley/.gitignore
 [alias]
 	st = status
 	lg = log --oneline --graph --decorate=short
@@ -25,3 +26,9 @@
 	sync = !git fetch upstream && git merge upstream/master
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 	comit = commit
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[rebase]
+	autosquash = true
