@@ -28,6 +28,7 @@ Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'asciidoc/vim-asciidoc'
 
 call plug#end()
 
@@ -59,7 +60,7 @@ colorscheme solarized
 highlight SignColumn ctermbg=8
 
 "" GVim
-set guifont=Inconsolata\ Medium\ 12
+set guifont=Inconsolata\ Medium\ 14
 "remove menu bar
 set guioptions-=m
 "remove toolbar
@@ -119,7 +120,7 @@ set foldmethod=syntax
 set list listchars=tab:▸\ ,trail:·
 
 "" ctags
-set tags=./.tags,./.TAGS,.tags;,.TAGS;
+set tags=./TAGS,./tags,;
 "" cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
@@ -148,10 +149,10 @@ imap <C-l> <Right>
 nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
 " Window Navigation
-nnoremap <silent> <C-Up> :wincmd k<CR>
-nnoremap <silent> <C-Down> :wincmd j<CR>
-nnoremap <silent> <C-Left> :wincmd h<CR>
-nnoremap <silent> <C-Right> :wincmd l<CR>
+nnoremap <silent> <leader>wk :wincmd k<CR>
+nnoremap <silent> <leader>wj :wincmd j<CR>
+nnoremap <silent> <leader>wh :wincmd h<CR>
+nnoremap <silent> <leader>wl :wincmd l<CR>
 " Tab Navigation
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
