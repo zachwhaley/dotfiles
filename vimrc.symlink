@@ -36,6 +36,10 @@ syntax on
 filetype plugin indent on
 set nocompatible
 
+"" I save way too often to need a backup file
+set noswapfile
+set nobackup
+
 "" Indenting
 set nosmartindent " use intelligent indentation for C
 set tabstop=4     " tab width is 4 spaces
