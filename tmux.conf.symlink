@@ -1,18 +1,74 @@
+# I use C-b and C-a to navigate the terminal
+unbind C-b
+set -g prefix C-s
+bind C-s send-prefix
+
+# start window numbers at 1 to match keyboard order with tmux window order
+set -g base-index 1
+set -g pane-base-index 1
+
+# Vim stuff
+set-window-option -g mode-keys vi
+
 # force a reload of the config file
-unbind r
-bind r source-file ~/.tmux.conf
+bind-key R source-file ~/.tmux.conf \; display-message "Reloaded"
+
+# improve colors
+set -g default-terminal screen-256color
+
+# increase history limit
+set -g history-limit 5000
 
 # quick pane cycling
-unbind ^B
-bind ^B select-pane -t :.+
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
 
 # easy-to-remember split pane commands
 bind | split-window -h
 bind - split-window -v
 
-# Vim stuff
-set-window-option -g mode-keys vi
-unbind p
-bind p paste-buffer
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
+#enable UTF-8 support in status bar
+setw -g utf8 on
+set -g status-utf8 on
+
+# status bar
+set -g status-interval 1
+set -g status-left '#[fg=yellow][tmux] #[fg=green]#S#[default]'
+set -g status-right '#[fg=blue]#h'
+
+#### COLOR (Solarized dark)
+
+# default statusbar colors
+set-option -g status-bg black #base02
+set-option -g status-fg yellow #yellow
+set-option -g status-attr default
+
+# default window title colors
+set-window-option -g window-status-fg brightblue #base0
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+
+# active window title colors
+set-window-option -g window-status-current-fg brightred #orange
+set-window-option -g window-status-current-bg default
+#set-window-option -g window-status-current-attr bright
+
+# pane border
+set-option -g pane-border-fg black #base02
+set-option -g pane-active-border-fg brightgreen #base01
+
+# message text
+set-option -g message-bg black #base02
+set-option -g message-fg brightred #orange
+
+# pane number display
+set-option -g display-panes-active-colour blue #blue
+set-option -g display-panes-colour brightred #orange
+
+# clock
+set-window-option -g clock-mode-colour green #green
+
+# bell
+set-window-option -g window-status-bell-style fg=black,bg=red #base02, red
