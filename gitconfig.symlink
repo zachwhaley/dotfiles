@@ -1,6 +1,6 @@
 [user]
-	email = zachbwhaley@gmail.com
 	name = Zachary Whaley
+	email = zachbwhaley@gmail.com
 [color]
 	ui = auto
 [diff]
@@ -15,20 +15,17 @@
 	editor = vim
 	excludesfile = /home/zwhaley/.gitignore
 [alias]
+	co = checkout
+	br = branch
 	st = status
+	ci = commit
 	lg = log --oneline --graph --decorate=short
 	unstage = reset HEAD --
 	last = log -1 HEAD
-	co = checkout
-	outgoing = log origin/master..
-	incoming = log ..origin/master
 	dif = diff
 	sync = !git fetch upstream && git merge upstream/master
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
-	comit = commit
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [rebase]
 	autosquash = true
+[pull]
+	rebase = true
