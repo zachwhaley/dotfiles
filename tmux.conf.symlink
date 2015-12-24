@@ -10,6 +10,9 @@ set -g pane-base-index 1
 # Vim stuff
 set-window-option -g mode-keys vi
 
+# Kill tmux with one fell swoop
+bind-key K kill-server
+
 # force a reload of the config file
 bind-key R source-file ~/.tmux.conf \; display-message "Reloaded"
 
@@ -19,11 +22,14 @@ set -g default-terminal screen-256color
 # increase history limit
 set -g history-limit 5000
 
-# quick pane cycling
+# pane cycling
 bind-key h select-pane -L
 bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
+
+# quick session views
+bind-key ^s choose-tree
 
 # easy-to-remember split pane commands
 bind | split-window -h
@@ -33,9 +39,10 @@ bind - split-window -v
 setw -g utf8 on
 set -g status-utf8 on
 
-# status bar
+# status bar stuff
 set -g status-interval 1
-set -g status-left '#[fg=yellow][tmux] #[fg=green]#S#[default]'
+set -g status-left-length 20
+set -g status-left '#[fg=yellow][tmux] #[fg=green]#S#[default] '
 set -g status-right '#[fg=blue]#h'
 
 #### COLOR (Solarized dark)
