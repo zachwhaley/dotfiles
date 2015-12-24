@@ -119,7 +119,7 @@ setup_zsh () {
   do
     link_file "$src" "${ZDOTDIR:-$HOME}/.${src:t}"
   done
-  if [[ ! "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]
+  if ! [[ "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]
   then
     chsh -s /bin/zsh
   fi
