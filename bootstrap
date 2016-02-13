@@ -43,7 +43,7 @@ link_file () {
       then
         skip=true;
       else
-        user "File already exists: $(basename "$src"), what do you want to do? \
+        user "File already exists: $(basename "$dst"), what do you want to do? \
 [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -rs -k 1 action
 
