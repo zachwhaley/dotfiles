@@ -1,12 +1,11 @@
-"" Vim Plug
-call plug#begin('~/.vim/plugged')
+"" NeoVim Plugins
+call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
 let g:plug_url_format = 'git@github.com:%s.git'
 
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/taglist.vim'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -17,13 +16,13 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['cpp', 'c'] }
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'zachwhaley/auto-pairs'
 Plug 'zachwhaley/vim-snippets'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -34,7 +33,6 @@ call plug#end()
 
 syntax on
 filetype plugin indent on
-set nocompatible
 
 "" I save way too often to need a backup file
 set noswapfile
@@ -63,13 +61,6 @@ set background=dark
 colorscheme solarized
 highlight SignColumn ctermbg=8
 
-"" GVim
-set guifont=Inconsolata\ Medium\ 14
-"remove menu bar
-set guioptions-=m
-"remove toolbar
-set guioptions-=T
-
 set splitright
 set splitbelow
 
@@ -87,7 +78,6 @@ let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
 "" Highlights
-set hlsearch
 set showmatch " highlight matching braces
 let g:cpp_class_scope_highlight = 1
 let python_highlight_all = 1
@@ -98,10 +88,8 @@ au InsertLeave * setlocal nocursorline " while moving, do not highlight the curr
 "" wrap lines at 95 chars.
 set wrapmargin=95
 set textwidth=95
-if version >= 703
-  set colorcolumn=95
-  highlight ColorColumn ctermbg=0
-endif
+set colorcolumn=95
+highlight ColorColumn ctermbg=0
 
 " turn line numbers on
 set number
@@ -110,21 +98,13 @@ set number
 set smartcase
 set ignorecase
 
-" Use the mouse
-set mouse=a
-
-" intelligent comments
-set comments=sl:/*,mb:\ *,elx:\ */
-
 " Folding
 set nofoldenable "Don't fold by default"
 set foldmethod=syntax
 
 " Show trailing whitespace and tabs
-set list listchars=tab:▸\ ,trail:·
+set list listchars=tab:▸\ ,trail:·,nbsp:*
 
-"" ctags
-set tags=./TAGS,./tags,;
 "" cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
