@@ -4,15 +4,15 @@
 [color]
 	ui = auto
 [diff]
-	tool = vimdiff
+	tool = nvim -d
 [merge]
-	tool = vimdiff
+	tool = nvim -d
 [difftool]
 	prompt = false
 [push]
 	default = simple
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/zwhaley/.gitignore
 [alias]
 	co = checkout
