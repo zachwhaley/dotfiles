@@ -19,7 +19,7 @@
 	br = branch
 	st = status
 	ci = commit
-	lg = log --oneline --graph --decorate=short
+	lg = log --oneline --graph --format='format:%C(auto)%h %s%C(dim white) · %an%C(auto)%d%C(reset)'
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	dif = diff
