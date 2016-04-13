@@ -30,9 +30,6 @@ Plug 'nfvs/vim-perforce'
 
 call plug#end()
 
-syntax on
-filetype plugin indent on
-
 "" I save way too often to need a backup file
 set noswapfile
 set nobackup
