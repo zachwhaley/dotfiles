@@ -6,14 +6,14 @@ let g:plug_url_format = 'git@github.com:%s.git'
 
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/taglist.vim'
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'scrooloose/nerdcommenter'
-Plug 'uarun/vim-protobuf', { 'for': 'proto' }
+Plug 'uarun/vim-protobuf'
 Plug 'altercation/vim-colors-solarized'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['cpp', 'c'] }
 Plug 'vim-airline/vim-airline'
@@ -24,10 +24,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'asciidoc/vim-asciidoc'
+Plug 'nfvs/vim-perforce'
 
 call plug#end()
 
