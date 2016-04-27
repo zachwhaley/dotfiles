@@ -83,6 +83,10 @@ let python_highlight_all = 1
 " Highlight current line when Inserting
 au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
 au InsertLeave * setlocal nocursorline " while moving, do not highlight the current line
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
 
 "" wrap lines at 95 chars.
 set wrapmargin=95
@@ -122,6 +126,9 @@ set completeopt=menuone,menu,longest,preview
 " <leader> is ";"
 let mapleader=";"
 set wildmode=list:longest,full
+
+" Terminal Mode
+tnoremap <Esc> <C-\><C-n>
 
 " Make normal directionals work in Insert Mode
 imap <C-h> <Left>
