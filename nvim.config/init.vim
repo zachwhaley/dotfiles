@@ -24,7 +24,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
-Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'hdima/python-syntax'
 Plug 'asciidoc/vim-asciidoc'
 Plug 'nfvs/vim-perforce'
 
