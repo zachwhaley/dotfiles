@@ -52,7 +52,6 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 
 "" Colors
-set t_Co=256
 set background=dark
 colorscheme solarized
 highlight SignColumn ctermbg=8
