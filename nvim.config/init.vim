@@ -145,6 +145,7 @@ nnoremap <silent> <leader>wl :wincmd l<CR>
 " Tab Navigation
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>te :tabnew<CR>
 " reverse tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
