@@ -38,10 +38,6 @@ bind-key ^s choose-tree
 bind | split-window -h
 bind - split-window -v
 
-#enable UTF-8 support in status bar
-setw -g utf8 on
-set -g status-utf8 on
-
 # status bar stuff
 set -g status-interval 1
 set -g status-left-length 20
