@@ -93,6 +93,9 @@ set textwidth=95
 set colorcolumn=95
 highlight ColorColumn ctermbg=0
 
+" Don't map <C-h> to delete pairs
+let g:AutoPairsMapCh = 0
+
 " turn line numbers on
 set number
 
