@@ -108,7 +108,8 @@ set nofoldenable "Don't fold by default"
 set foldmethod=syntax
 
 " Show trailing whitespace and tabs
-set list listchars=tab:▸\ ,trail:·,nbsp:*
+set showbreak=↪\ 
+set list lcs=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 
 "" cscope
 function! LoadCscope()
