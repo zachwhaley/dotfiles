@@ -92,8 +92,6 @@ endif
 "" wrap lines at 95 chars.
 set wrapmargin=95
 set textwidth=95
-set colorcolumn=95
-highlight ColorColumn ctermbg=0
 
 " Don't map <C-h> to delete pairs
 let g:AutoPairsMapCh = 0
