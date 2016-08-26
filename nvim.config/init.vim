@@ -50,6 +50,8 @@ autocmd Filetype proto setlocal ts=2 sts=2 sw=2
 autocmd Filetype vim setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
+" Tab tabs
+autocmd Filetype go setlocal noet
 
 "" Colors
 set background=dark
