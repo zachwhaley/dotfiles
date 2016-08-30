@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'scrooloose/nerdcommenter'
 Plug 'uarun/vim-protobuf'
 Plug 'altercation/vim-colors-solarized'
-Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['cpp', 'c'] }
+Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['cpp', 'c'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'zachwhaley/auto-pairs'
