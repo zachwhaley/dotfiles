@@ -26,7 +26,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
-Plug 'nfvs/vim-perforce'
 
 call plug#end()
 
@@ -73,7 +72,7 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 
 " Sy Source control options
 " let g:signify_sign_overwrite = 1
-let g:signify_vcs_list = [ 'git', 'perforce' ]
+let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
