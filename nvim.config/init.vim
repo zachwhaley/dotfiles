@@ -26,6 +26,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
+Plug 'aliva/vim-fish'
 
 call plug#end()
 

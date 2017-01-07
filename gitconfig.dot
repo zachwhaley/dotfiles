@@ -22,7 +22,7 @@
 	cp = cherry-pick
 	sh = show
 	di = diff
-	ds = diff --staged
+	sd = diff --staged
 	lg = log --oneline --graph --format='format:%C(auto)%h %s%C(dim white) · %an%C(auto)%d%C(reset)'
 	unstage = reset HEAD
 	last = log -1 HEAD
