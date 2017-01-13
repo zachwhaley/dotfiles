@@ -19,9 +19,6 @@ bind-key K kill-server
 # force a reload of the config file
 bind-key R source-file ~/.tmux.conf \; display-message "Reloaded"
 
-# improve colors
-set -g default-terminal screen-256color
-
 # increase history limit
 set -g history-limit 5000
 
@@ -38,43 +35,29 @@ bind-key ^s choose-tree
 bind | split-window -h
 bind _ split-window -v
 
-# status bar stuff
-set -g status-interval 1
+# improve colors
+set -g default-terminal screen-256color
+
+# Panes
+set -g pane-border-style bg=black,fg=colour8
+set -g pane-active-border-style bg=black,fg=yellow
+
+# Statusbar
+set -g status-interval 2
+set -g status-position bottom
+set -g status-style bg=black,fg=colour10
+set -g status-right-length 50
+set -g status-right '#[bg=colour10,fg=white] #S #[fg=white,bold,bg=colour11] %H:%M:%S '
 set -g status-left-length 20
-set -g status-left '#[fg=yellow][tmux] #[fg=green]#S#[default] '
-set -g status-right '#[fg=blue]#h'
+set -g status-left '#[bg=cyan,fg=white] #H #[bg=default] '
 
-#### COLOR (Solarized dark)
+# Window status
+setw -g window-status-format '#[bg=colour11,fg=colour15] #W #[reverse] #F '
+setw -g window-status-current-format '#[bg=yellow,fg=white,bold] #W #[reverse,nobold] #F '
 
-# default statusbar colors
-set-option -g status-bg black #base02
-set-option -g status-fg yellow #yellow
-set-option -g status-attr default
+# Messages
+set -g message-style bg=black,fg=colour12
+set -g message-command-style bg=black,fg=red
 
-# default window title colors
-set-window-option -g window-status-fg brightblue #base0
-set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
-
-# active window title colors
-set-window-option -g window-status-current-fg brightred #orange
-set-window-option -g window-status-current-bg default
-#set-window-option -g window-status-current-attr bright
-
-# pane border
-set-option -g pane-border-fg black #base02
-set-option -g pane-active-border-fg brightgreen #base01
-
-# message text
-set-option -g message-bg black #base02
-set-option -g message-fg brightred #orange
-
-# pane number display
-set-option -g display-panes-active-colour blue #blue
-set-option -g display-panes-colour brightred #orange
-
-# clock
-set-window-option -g clock-mode-colour green #green
-
-# bell
-set-window-option -g window-status-bell-style fg=black,bg=red #base02, red
+# Modes
+setw -g mode-style bg=blue,fg=white,bold
