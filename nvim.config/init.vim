@@ -12,7 +12,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind'  }
 Plug 'scrooloose/nerdcommenter'
 Plug 'uarun/vim-protobuf'
 Plug 'altercation/vim-colors-solarized'
