@@ -106,8 +106,8 @@ TERM xterm-termite
 #NORMAL 00;38;5;244 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-DIR 01;38;5;32 # directory 01;34
-LINK 01;38;5;37 # symbolic link. (If you set this to 'target' instead of a
+DIR 01;38;5;4 # directory 01;34
+LINK 01;38;5;7 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 48;5;230;38;5;136;01 # pipe
@@ -123,7 +123,7 @@ STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (
 OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 01;38;5;64
+EXEC 01;38;5;2
 
 ## Archives or compressed (violet + bold for compression)
 .tar    00;38;5;61
@@ -189,7 +189,6 @@ EXEC 01;38;5;64
 .ico    00;38;5;136
 
 # "unimportant" files as logs and backups (base01)
-.log        00;38;5;240
 .bak        00;38;5;240
 .aux        00;38;5;240
 .lof        00;38;5;240

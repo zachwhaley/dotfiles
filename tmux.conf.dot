@@ -60,4 +60,4 @@ set -g message-style bg=black,fg=colour12
 set -g message-command-style bg=black,fg=red
 
 # Modes
-setw -g mode-style bg=blue,fg=white,bold
+setw -g mode-style bg=colour11,fg=white,bold
