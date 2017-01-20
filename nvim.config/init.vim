@@ -81,9 +81,8 @@ let g:signify_sign_delete = '-'
 set showmatch " highlight matching braces
 let g:cpp_class_scope_highlight = 1
 let python_highlight_all = 1
-" Highlight current line when Inserting
-au InsertEnter * setlocal cursorline   " while inserting, highlight the current line
-au InsertLeave * setlocal nocursorline " while moving, do not highlight the current line
+" Change cursor when inserting
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>

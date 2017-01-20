@@ -12,6 +12,8 @@ set -g pane-base-index 1
 
 # Vim stuff
 set-window-option -g mode-keys vi
+# Allow cursor change in Neovim
+set -g -a terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
 
 # Kill tmux with one fell swoop
 bind-key K kill-server
