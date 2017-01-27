@@ -106,6 +106,7 @@ install_dotfiles () {
   done
 
   info 'installing config files'
+  mkdir -p "$HOME/.config"
   for src in $(find "$DOTFILES_ROOT" -maxdepth 2 -name '*.config')
   do
     dst="$HOME/.config/$(basename "${src%.*}")"
