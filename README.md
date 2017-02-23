@@ -7,8 +7,8 @@ Install
 -------
 
 ```bash
-$ git clone git@github.com:zachwhaley/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
+$ git clone https://github.com/zachwhaley/dotfiles.git
+$ cd ~/dotfiles
 $ ./bootstrap
 ```
 
