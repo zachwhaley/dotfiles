@@ -1,4 +1,4 @@
 [submodule "prezto"]
-	path = zprezto.dot
+	path = prezto
 	url = git@github.com:zachwhaley/prezto.git
 	branch = master

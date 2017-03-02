@@ -1,0 +1,5 @@
+ch = change
+op = opened
+su = submit
+st = status
+log = changes -s submitted -l

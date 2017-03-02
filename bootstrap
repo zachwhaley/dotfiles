@@ -10,37 +10,33 @@ set +o noclobber
 
 echo ''
 
-info () {
-  printf "  [ \033[00;34m..\033[0m ] $1"
+info() {
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
 }
 
-user () {
+user() {
   printf "\r  [ \033[0;33m?\033[0m ] $1 "
 }
 
-success () {
+success() {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
+fail() {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n\n"
   exit
 }
 
-link_file () {
+link_file() {
   local src=$1 dst=$2
 
   local overwrite= backup= skip=
   local action=
 
-  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-  then
-    if [[ "$overwrite_all" == "false"  &&  "$backup_all" == "false"  &&  "$skip_all" == "false" ]]
-    then
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
+    if [[ "$overwrite_all" == "false"  &&  "$backup_all" == "false"  &&  "$skip_all" == "false" ]]; then
       local currentSrc="$(readlink $dst)"
-      if [[ "$currentSrc" == "$src" ]]
-      then
+      if [[ "$currentSrc" == "$src" ]]; then
         skip=true;
       else
         user "File already exists: $(basename "$dst"), what do you want to do? \
@@ -70,70 +66,59 @@ link_file () {
     backup=${backup:-$backup_all}
     skip=${skip:-$skip_all}
 
-    if [[ "$overwrite" == "true" ]]
-    then
+    if [[ "$overwrite" == "true" ]]; then
       rm -rf "$dst"
       success "removed $dst"
     fi
 
-    if [[ "$backup" == "true" ]]
-    then
+    if [[ "$backup" == "true" ]]; then
       mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
 
-    if [[ "$skip" == "true" ]]
-    then
+    if [[ "$skip" == "true" ]]; then
       success "skipped $src"
     fi
   fi
 
-  if [[ "$skip" != "true" ]]  # "false" or empty
-  then
+  if [[ "$skip" != "true" ]]; then
     ln -s "$src" "$dst"
     success "linked $src to $dst"
   fi
 }
 
-install_dotfiles () {
-  local overwrite_all=false backup_all=false skip_all=false
+stow_dotfiles() {
+  if ! command which stow 1>/dev/null; then
+    fail 'stow must be installed'
+  fi
 
-  info 'installing dotfiles'
-  for src in $(find "$DOTFILES_ROOT" -maxdepth 2 -name '*.dot')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
-  done
-
-  info 'installing config files'
-  mkdir -p "$HOME/.config"
-  for src in $(find "$DOTFILES_ROOT" -maxdepth 2 -name '*.config')
-  do
-    dst="$HOME/.config/$(basename "${src%.*}")"
-    link_file "$src" "$dst"
+  info "installing dot files"
+  for src in $(find -maxdepth 1 -type d ! -name  '.*' ! -name 'prezto' -printf '%f\n'); do
+    if stow $src; then
+      success "stowed $src"
+    else
+      fail "failed to stow $src"
+    fi
   done
 }
 
-setup_zsh () {
-  info 'installing Zsh files\n'
-
+setup_zsh() {
+  info "installing zsh files"
   local overwrite_all=false backup_all=false skip_all=false
 
   # Mostly from Prezto README on installation
   git submodule update --init --recursive
   setopt EXTENDED_GLOB
-  for src in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N)
-  do
-    link_file "$src" "${ZDOTDIR:-$HOME}/.${src:t}"
+  for rcfile in "${ZDOTDIR:-$DOTFILES_ROOT}"/prezto/runcoms/^README.md(.N); do
+    link_file "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
-  if ! [[ "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]
-  then
+  if ! [[ "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]; then
     chsh -s /bin/zsh
   fi
 }
 
-install_dotfiles
+stow_dotfiles
 setup_zsh
 
 echo ''
-echo '  All installed!'
+success "Done!\n"
