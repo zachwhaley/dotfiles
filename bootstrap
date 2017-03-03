@@ -93,7 +93,7 @@ stow_dotfiles() {
   fi
 
   info "installing dot files"
-  for src in $(find -maxdepth 1 -type d ! -name  '.*' ! -name 'prezto' -printf '%f\n'); do
+  for src in $(find -maxdepth 1 -type d ! -name  '.*' -printf '%f\n'); do
     if stow $src; then
       success "stowed $src"
     else
@@ -109,7 +109,7 @@ setup_zsh() {
   # Mostly from Prezto README on installation
   git submodule update --init --recursive
   setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$DOTFILES_ROOT}"/prezto/runcoms/^README.md(.N); do
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     link_file "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
   if ! [[ "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]; then
