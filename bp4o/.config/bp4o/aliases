@@ -1,5 +1,15 @@
 ch = change
 op = opened
+rm = delete
+mv = move
+st = status -m
+re = reconcile
 su = submit
-st = status
-log = changes -s submitted -l
+df = diff -du5
+sy = sync --parallel=10
+log = changes -i -l -s submitted
+flog = filelog -i
+show = describe -du5
+blame = annotate -I
+pe = changes -l -s pending -u zwhaley
+sh = changes -l -s shelved -u zwhaley
