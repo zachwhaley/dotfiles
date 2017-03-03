@@ -2,7 +2,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
-let g:plug_url_format = 'git@github.com:%s.git'
 
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/taglist.vim'
