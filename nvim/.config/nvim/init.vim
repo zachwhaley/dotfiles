@@ -27,6 +27,9 @@ Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
 Plug 'aliva/vim-fish'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neoinclude.vim'
+Plug 'zchee/deoplete-clang'
 
 call plug#end()
 
@@ -122,7 +125,21 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
-set completeopt=menuone,menu,longest,preview
+" Taglist
+let Tlist_Close_On_Select = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Use_Right_Window = 1
+
+set completeopt-=preview
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 1
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 "" Keyboard mappings
 " <leader> is ";"
@@ -165,6 +182,7 @@ vnoremap <C-e> $
 
 " Open NERDTree
 nnoremap <C-n> :NERDTreeFind<CR>
+nnoremap <C-c> :q<CR>
 " CtrlP
 nmap <C-p> :CtrlP<CR>
 " Open TagList
