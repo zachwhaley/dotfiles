@@ -189,12 +189,13 @@ EXEC 01;38;5;2
 .ico    1;38;5;5
 
 # "unimportant" files as logs and backups (base01)
-.bak        0;38;5;10
 .aux        0;38;5;10
+.bak        0;38;5;10
 .lof        0;38;5;10
 .lol        0;38;5;10
 .lot        0;38;5;10
 .out        0;38;5;10
+.files      0;38;5;10
 .toc        0;38;5;10
 .bbl        0;38;5;10
 .blg        0;38;5;10
