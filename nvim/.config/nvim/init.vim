@@ -29,6 +29,7 @@ Plug 'aliva/vim-fish'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'zchee/deoplete-clang'
+Plug 'chazy/cscope_maps'
 
 call plug#end()
 
@@ -112,7 +113,7 @@ set foldmethod=syntax
 set showbreak=↪\ 
 set list lcs=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 
-"" cscope
+" Cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
   if (!empty(db))
