@@ -3,12 +3,12 @@
 	email = zachbwhaley@gmail.com
 [color]
 	ui = auto
-[diff]
-	tool = nvim -d
 [merge]
-	tool = nvim -d
-[difftool]
-	prompt = false
+	tool = vimdiff
+[mergetool]
+	prompt = true
+[mergetool]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [push]
 	default = simple
 [core]
