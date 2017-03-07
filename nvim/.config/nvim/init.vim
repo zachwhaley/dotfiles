@@ -27,9 +27,7 @@ Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
 Plug 'aliva/vim-fish'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neoinclude.vim'
-Plug 'zchee/deoplete-clang'
-Plug 'chazy/cscope_maps'
+Plug 'tweekmonster/deoplete-clang2'
 
 call plug#end()
 
@@ -126,7 +124,8 @@ function! LoadCscope()
     set cscopeverbose
   endif
 endfunction
-au BufEnter /* call LoadCscope()
+"""" Temporarily disable LoadCscope.  It seems to be broken :(
+"au BufEnter /* call LoadCscope()
 
 " Taglist
 let Tlist_Close_On_Select = 1
@@ -136,13 +135,11 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Use_Right_Window = 1
 
 set completeopt-=preview
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 1
-let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+let g:deoplete#sources#clang#executable = '/usr/bin/clang'
 
 "" Keyboard mappings
 " <leader> is ";"
