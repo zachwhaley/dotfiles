@@ -113,6 +113,9 @@ set foldmethod=syntax
 set showbreak=↪\ 
 set list lcs=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 
+" Tags
+set tags=tags;/
+
 " Cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
@@ -138,7 +141,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 1
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 "" Keyboard mappings
