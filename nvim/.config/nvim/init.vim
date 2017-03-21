@@ -58,8 +58,12 @@ set background=dark
 colorscheme solarized
 highlight SignColumn ctermbg=8
 
+" More intuitive window splitting
 set splitright
 set splitbelow
+
+" Cool Neovim feature that shows real-time search/replace
+set inccommand=nosplit
 
 " Status line
 let g:airline_left_sep=' '
@@ -137,7 +141,18 @@ set completeopt-=preview
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#auto_complete_delay = 0
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
+
+" deoplete clang
 let g:deoplete#sources#clang#executable = '/usr/bin/clang'
 
 "" Keyboard mappings
