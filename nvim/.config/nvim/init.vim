@@ -183,7 +183,5 @@ vnoremap <C-e> $
 " Open NERDTree
 nnoremap <C-n> :NERDTreeFind<CR>
 nnoremap <C-c> :q<CR>
-" CtrlP
-nmap <C-p> :CtrlP<CR>
 " Open TagList
 nnoremap <C-m> :TlistToggle<CR>
