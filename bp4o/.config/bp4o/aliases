@@ -11,5 +11,6 @@ log = changes -i -l -s submitted
 flog = filelog -i
 show = describe -du5
 blame = annotate -I
+shelve = shelve -f
 pe = changes -l -s pending -u zwhaley
 sh = changes -l -s shelved -u zwhaley
