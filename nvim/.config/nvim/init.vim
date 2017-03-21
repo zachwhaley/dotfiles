@@ -36,7 +36,6 @@ set noswapfile
 set nobackup
 
 "" Indenting
-set nosmartindent " use intelligent indentation for C
 set tabstop=4     " tab width is 4 spaces
 set shiftwidth=4  " indent also with 4 spaces
 set expandtab     " use spaces in place of tabs
