@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
 
+"Plug 'chazy/cscope_maps'
+
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-markdown'
@@ -23,10 +25,11 @@ Plug 'zachwhaley/vim-snippets'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
 Plug 'aliva/vim-fish'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neoinclude.vim'
 Plug 'tweekmonster/deoplete-clang2'
 
 call plug#end()
@@ -55,7 +58,7 @@ autocmd Filetype go setlocal noet
 
 "" Colors
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 highlight SignColumn ctermbg=8
 
 " More intuitive window splitting
@@ -128,7 +131,7 @@ function! LoadCscope()
   endif
 endfunction
 """" Temporarily disable LoadCscope.  It seems to be broken :(
-"au BufEnter /* call LoadCscope()
+au BufEnter /* call LoadCscope()
 
 " Taglist
 let Tlist_Close_On_Select = 1
@@ -143,9 +146,6 @@ set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#auto_complete_delay = 0
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
