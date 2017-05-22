@@ -3,8 +3,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
 
-"Plug 'chazy/cscope_maps'
-
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-markdown'
@@ -25,12 +23,18 @@ Plug 'zachwhaley/vim-snippets'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
-"Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
 Plug 'aliva/vim-fish'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'tweekmonster/deoplete-clang2'
+Plug 'chazy/cscope_maps'
+Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'vim-python/python-syntax'
+Plug 'udalov/kotlin-vim'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
@@ -44,6 +48,7 @@ set shiftwidth=4  " indent also with 4 spaces
 set expandtab     " use spaces in place of tabs
 " 2 space tabs
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ejs setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
@@ -54,11 +59,11 @@ autocmd Filetype vim setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 " Tab tabs
-autocmd Filetype go setlocal noet
+autocmd Filetype go setlocal noet nolist
 
 "" Colors
 set background=dark
-"colorscheme solarized
+colorscheme solarized
 highlight SignColumn ctermbg=8
 
 " More intuitive window splitting
@@ -67,6 +72,9 @@ set splitbelow
 
 " Cool Neovim feature that shows real-time search/replace
 set inccommand=nosplit
+
+" Mouse support
+set mouse=a
 
 " Status line
 let g:airline_left_sep=' '
@@ -87,7 +95,7 @@ let g:signify_sign_delete = '-'
 "" Highlights
 set showmatch " highlight matching braces
 let g:cpp_class_scope_highlight = 1
-let python_highlight_all = 1
+let g:python_highlight_all = 1
 " Change cursor when inserting
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Use <C-L> to clear the highlighting of :set hlsearch.
@@ -130,8 +138,7 @@ function! LoadCscope()
     set cscopeverbose
   endif
 endfunction
-"""" Temporarily disable LoadCscope.  It seems to be broken :(
-au BufEnter /* call LoadCscope()
+"au BufEnter /* call LoadCscope()
 
 " Taglist
 let Tlist_Close_On_Select = 1
@@ -154,6 +161,10 @@ endfunction
 
 " deoplete clang
 let g:deoplete#sources#clang#executable = '/usr/bin/clang'
+
+" disabled completion from vim-jedi
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_assignments_command = "<leader>f"
 
 "" Keyboard mappings
 " <leader> is ";"
