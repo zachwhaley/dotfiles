@@ -4,14 +4,14 @@ call plug#begin('~/.config/nvim/plugged')
 let g:plug_threads = 8
 
 Plug 'vim-scripts/a.vim'
-Plug 'vim-scripts/taglist.vim'
+Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-liquid'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind'  }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'uarun/vim-protobuf'
 Plug 'altercation/vim-colors-solarized'
@@ -140,12 +140,9 @@ function! LoadCscope()
 endfunction
 "au BufEnter /* call LoadCscope()
 
-" Taglist
-let Tlist_Close_On_Select = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Use_Right_Window = 1
+" Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
 
 set completeopt-=preview
 
@@ -170,6 +167,13 @@ let g:jedi#goto_assignments_command = "<leader>f"
 " <leader> is ";"
 let mapleader=";"
 set wildmode=list:longest,full
+
+" Open NERDTree
+"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+nnoremap <C-n> :NERDTreeToggle %<CR>
+
+" Tagbar
+nnoremap <C-m> :TagbarToggle<CR>
 
 " Terminal Mode
 tnoremap <Esc> <C-\><C-n>
@@ -204,9 +208,3 @@ nnoremap <C-a> ^
 nnoremap <C-e> <End>
 vnoremap <C-a> ^
 vnoremap <C-e> $
-
-" Open NERDTree
-nnoremap <C-n> :NERDTreeFind<CR>
-nnoremap <C-c> :q<CR>
-" Open TagList
-nnoremap <C-m> :TlistToggle<CR>
