@@ -71,6 +71,9 @@ highlight SignColumn ctermbg=8
 set splitright
 set splitbelow
 
+" More readable wrapping
+set linebreak
+
 " Cool Neovim feature that shows real-time search/replace
 set inccommand=nosplit
 
