@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'uarun/vim-protobuf'
 Plug 'altercation/vim-colors-solarized'
-Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['cpp', 'c'] }
+Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'zachwhaley/auto-pairs'
@@ -25,186 +25,132 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
-Plug 'aliva/vim-fish'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
-Plug 'tweekmonster/deoplete-clang2'
-Plug 'chazy/cscope_maps'
-Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-jedi'
-Plug 'vim-python/python-syntax'
-Plug 'udalov/kotlin-vim'
-Plug 'kchmck/vim-coffee-script'
+Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
+Plug 'zachwhaley/cscope_macros.vim'
+Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
+Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+Plug 'vim-python/python-syntax', { 'for': ['python'] }
 
 call plug#end()
 
-"" I save way too often to need a backup file
+
+""""""""""""
+" Settings "
+""""""""""""
+
+" I save way too often to need a backup file
 set noswapfile
 set nobackup
 
-"" Indenting
-set tabstop=4     " tab width is 4 spaces
-set shiftwidth=4  " indent also with 4 spaces
-set expandtab     " use spaces in place of tabs
-" 2 space tabs
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ejs setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
-autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-autocmd Filetype bash setlocal ts=2 sts=2 sw=2
-autocmd Filetype proto setlocal ts=2 sts=2 sw=2
-autocmd Filetype vim setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-" Tab tabs
-autocmd Filetype go setlocal noet nolist
+" Indenting
+set tabstop=4    " tab stop is 4 characters
+set shiftwidth=4 " indent also with 4 spaces
+set expandtab    " use spaces in place of tabs
 
-"" Colors
-set background=dark
-colorscheme solarized
-highlight SignColumn ctermbg=8
-
-" More intuitive window splitting
+"" More intuitive window splitting
 set splitright
 set splitbelow
 
 " More readable wrapping
 set linebreak
+set showbreak=↪\ 
 
-" Cool Neovim feature that shows real-time search/replace
+" Wrap lines at 95 chars.
+set wrapmargin=95
+set textwidth=95
+
+" Show line numbers on
+set number
+
+" Show real-time search/replace
 set inccommand=nosplit
+" Be smart when searching
+set ignorecase
+set smartcase
 
 " Mouse support
 set mouse=a
 
-" Status line
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#right_sep = ' '
+" Dark colorscheme
+set background=dark
+
+" Highlight matching braces
+set showmatch
+
+" Folding
+set nofoldenable " don't fold by default"
+set foldmethod=syntax
+
+" Show trailing whitespace and tabs
+set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
+
+" Don't show preview window
+set completeopt-=preview
+
+" Colors
+colorscheme solarized
+
+" 2 space indentation
+augroup two_space_indent
+  autocmd!
+  autocmd FileType javascript,coffee
+                 \,html,css
+                 \,sh,zsh
+                 \,proto
+                 \,vim
+                 \,ruby,eruby
+                 \,yaml
+            \ setlocal ts=2 sw=2
+augroup END
+
 " Always show sign column
-autocmd BufEnter * sign define dummy
-autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+highlight SignColumn ctermbg=8
+augroup show_sign_column
+  autocmd!
+  autocmd BufEnter * sign define dummy
+  autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+augroup END
 
-" Sy Source control options
-" let g:signify_sign_overwrite = 1
-let g:signify_vcs_list = [ 'git' ]
-let g:signify_sign_change = '~'
-let g:signify_sign_delete = '-'
-
-"" Highlights
-set showmatch " highlight matching braces
-let g:cpp_class_scope_highlight = 1
-let g:python_highlight_all = 1
-" Change cursor when inserting
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
-"" wrap lines at 95 chars.
-set wrapmargin=95
-set textwidth=95
 
-" Don't map <C-h> to delete pairs
-let g:AutoPairsMapCh = 0
+""""""""""""
+" Mappings "
+""""""""""""
 
-" turn line numbers on
-set number
-
-" turn on smart case during searches
-set smartcase
-set ignorecase
-
-" Folding
-set nofoldenable "Don't fold by default"
-set foldmethod=syntax
-
-" Show trailing whitespace and tabs
-set showbreak=↪\ 
-set list lcs=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
-
-" Tags
-set tags=tags;/
-
-" Cscope
-function! LoadCscope()
-  let db = findfile("cscope.out", ".;")
-  if (!empty(db))
-    let path = strpart(db, 0, match(db, "/cscope.out$"))
-    set nocscopeverbose " suppress 'duplicate connection' error
-    exe "cs add " . db . " " . path
-    set cscopeverbose
-  endif
-endfunction
-"au BufEnter /* call LoadCscope()
-
-" Tagbar
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-
-set completeopt-=preview
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 0
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#close_popup() . "\<CR>"
-endfunction
-
-" deoplete clang
-let g:deoplete#sources#clang#executable = '/usr/bin/clang'
-
-" disabled completion from vim-jedi
-let g:jedi#completions_enabled = 0
-let g:jedi#goto_assignments_command = "<leader>f"
-
-"" Keyboard mappings
-" <leader> is ";"
 let mapleader=";"
-set wildmode=list:longest,full
 
-" Open NERDTree
-"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-nnoremap <C-n> :NERDTreeToggle %<CR>
+" Natural movement for wrapped lines
+noremap k gk
+noremap j gj
 
-" Tagbar
-nnoremap <C-m> :TagbarToggle<CR>
+" Insert mode navigation
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
-" Terminal Mode
-tnoremap <Esc> <C-\><C-n>
+" Window navigation
+nnoremap <Leader>w <C-w>
 
-" Make normal directionals work in Insert Mode
-imap <C-h> <Left>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-l> <Right>
-" Hunk jumping
-nmap <leader>gj <plug>(signify-next-hunk)
-nmap <leader>gk <plug>(signify-prev-hunk)
-" Window Navigation
-nnoremap <silent> <leader>wk :wincmd k<CR>
-nnoremap <silent> <leader>wj :wincmd j<CR>
-nnoremap <silent> <leader>wh :wincmd h<CR>
-nnoremap <silent> <leader>wl :wincmd l<CR>
-" Tab Navigation
-nnoremap <leader>tn :tabnext<CR>
-nnoremap <leader>tp :tabprevious<CR>
-nnoremap <leader>te :tabnew<CR>
-" reverse tab
+" Tab navigation
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>te :tabnew<CR>
+
+" Reverse tab
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
 nnoremap <Tab> >>
+
 " Yank to end of line
 nnoremap Y y$
+
 " A touch of Emacs
 inoremap <C-a> <Esc>I
 inoremap <C-e> <End>
@@ -212,3 +158,61 @@ nnoremap <C-a> ^
 nnoremap <C-e> <End>
 vnoremap <C-a> ^
 vnoremap <C-e> $
+
+" Terminal mode escape
+tnoremap <Esc> <C-\><C-n>
+
+" Open NERDTree
+nnoremap <C-n> :NERDTreeToggle %<CR>
+
+" Tagbar
+nnoremap <C-m> :TagbarToggle<CR>
+
+" Hunk jumping
+nmap <Leader>gj <Plug>(signify-next-hunk)
+nmap <Leader>gk <Plug>(signify-prev-hunk)
+
+
+"""""""""""""""""""
+" Plugin Settings "
+"""""""""""""""""""
+
+" Status line
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#right_sep = ' '
+
+" Sy Source control options
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_change = '~'
+let g:signify_sign_delete = '-'
+
+"" Highlights
+let g:cpp_class_scope_highlight = 1
+let g:python_highlight_all = 1
+
+" Don't map <C-h> to delete pairs
+let g:AutoPairsMapCh = 0
+
+" Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#auto_complete_delay = 0
+"" <CR>: close popup and save indent.
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function() abort
+"  return deoplete#close_popup() . "\<CR>"
+"endfunction
+
+" deoplete clang
+let g:deoplete#sources#clang#executable = '/usr/bin/clang'
+
+" disabled completion from vim-jedi
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_assignments_command = "<Leader>f"
