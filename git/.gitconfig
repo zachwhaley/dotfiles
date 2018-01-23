@@ -3,10 +3,11 @@
 [color]
 	ui = auto
 [merge]
-	tool = vimdiff
+	tool = nvimdiff
 [mergetool]
 	prompt = true
-[mergetool "vimdiff"]
+	keepBackup = false
+[mergetool "nvimdiff"]
 	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [push]
 	default = simple
