@@ -13,7 +13,6 @@
 	default = simple
 [core]
 	editor = nvim
-	excludesfile = /home/zwhaley/.gitignore
 [alias]
 	co = checkout
 	br = branch
