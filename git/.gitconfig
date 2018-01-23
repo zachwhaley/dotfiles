@@ -32,3 +32,5 @@
 	autosquash = true
 [pull]
 	rebase = true
+[blame]
+	date = relative
