@@ -131,8 +131,8 @@ noremap j gj
 
 " Insert mode navigation
 inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
+inoremap <C-j> <C-o>gj
+inoremap <C-k> <C-o>gk
 inoremap <C-l> <Right>
 
 " Window navigation
