@@ -141,7 +141,7 @@ nnoremap <Leader>w <C-w>
 " Tab navigation
 nnoremap <Leader>tn :tabnext<CR>
 nnoremap <Leader>tp :tabprevious<CR>
-nnoremap <Leader>te :tabnew<CR>
+nnoremap <Leader>tt :tabnew<CR>
 
 " Reverse tab
 nnoremap <S-Tab> <<
