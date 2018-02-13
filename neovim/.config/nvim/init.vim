@@ -125,6 +125,8 @@ endif
 
 let mapleader=";"
 
+noremap <Leader>+ :tabedit $MYVIMRC<CR>
+
 " Natural movement for wrapped lines
 noremap k gk
 noremap j gj
