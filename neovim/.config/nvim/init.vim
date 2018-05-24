@@ -25,13 +25,11 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/neoinclude.vim'
-"Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zachwhaley/cscope_macros.vim'
-"Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-"Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-"Plug 'vim-python/python-syntax', { 'for': ['python'] }
+Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
+Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+Plug 'vim-python/python-syntax', { 'for': ['python'] }
 Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 
 call plug#end()
@@ -219,3 +217,4 @@ let g:deoplete#sources#clang#executable = '/usr/bin/clang'
 " disabled completion from vim-jedi
 let g:jedi#completions_enabled = 0
 let g:jedi#goto_assignments_command = "<Leader>f"
+let g:jedi#force_py_version = 3
