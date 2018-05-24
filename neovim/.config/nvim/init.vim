@@ -25,13 +25,14 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-signify'
 Plug 'asciidoc/vim-asciidoc'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neoinclude.vim'
-Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/neoinclude.vim'
+"Plug 'tweekmonster/deoplete-clang2', { 'for': ['c', 'cpp'] }
 Plug 'zachwhaley/cscope_macros.vim'
-Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-Plug 'vim-python/python-syntax', { 'for': ['python'] }
+"Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
+"Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+"Plug 'vim-python/python-syntax', { 'for': ['python'] }
+Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 
 call plug#end()
 
