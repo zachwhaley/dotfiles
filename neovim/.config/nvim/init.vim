@@ -3,34 +3,44 @@ call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
 
-Plug 'vim-scripts/a.vim'
+" Generic plugins
 Plug 'majutsushi/tagbar'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-liquid'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'uarun/vim-protobuf'
+Plug 'vim-scripts/a.vim'
+Plug 'zachwhaley/auto-pairs'
+
+" Theme plugins
 Plug 'altercation/vim-colors-solarized'
-Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'zachwhaley/auto-pairs'
-Plug 'zachwhaley/vim-snippets'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
+
+" Git plugins
 Plug 'mhinz/vim-signify'
-Plug 'asciidoc/vim-asciidoc'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-fugitive'
+
+" Python plugins
+"Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
+"Plug 'vim-python/python-syntax', { 'for': ['python'] }
+"Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+
+" C/C++ plugins
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zachwhaley/cscope_macros.vim'
-Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-Plug 'vim-python/python-syntax', { 'for': ['python'] }
+Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
+
+" Misc plugins
+Plug 'garbas/vim-snipmate'
 Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
+Plug 'tpope/vim-liquid'
+Plug 'uarun/vim-protobuf'
+Plug 'zachwhaley/vim-snippets'
 
 call plug#end()
 
