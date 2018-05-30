@@ -20,6 +20,7 @@ Plug 'zachwhaley/auto-pairs'
 
 " Theme plugins
 Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
