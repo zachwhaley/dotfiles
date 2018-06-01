@@ -19,6 +19,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'zachwhaley/auto-pairs'
 
 " Theme plugins
+Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -101,7 +102,8 @@ set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 set completeopt-=preview
 
 " Colors
-colorscheme solarized
+colorscheme gruvbox
+set termguicolors
 
 " 2 space indentation
 augroup two_space_indent
