@@ -203,6 +203,12 @@ colorscheme gruvbox
 set background=dark
 set termguicolors
 
+" Fix colors in C/C++ files
+if g:colors_name == 'gruvbox'
+  highlight! link cString GruvboxPurple
+  highlight! link cOperator GruvboxRed
+endif
+
 " Highlight matching braces
 set showmatch
 
@@ -231,9 +237,3 @@ augroup two_space_indent
                  \,yaml
             \ setlocal ts=2 sw=2
 augroup END
-
-" Fix colors in C/C++ files
-if g:colors_name == 'gruvbox'
-  highlight! link cString GruvboxPurple
-  highlight! link cOperator GruvboxRed
-endif
