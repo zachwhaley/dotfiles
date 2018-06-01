@@ -20,7 +20,7 @@ Plug 'zachwhaley/auto-pairs'
 
 " Theme plugins
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -53,7 +53,11 @@ call plug#end()
 """""""""""""""""""
 
 " Color scheme
-let g:gruvbox_improved_strings = 1
+let g:solarized_termtrans = 1
+let g:solarized_term_italics = 0
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 1
 let g:gruvbox_improved_warnings = 1
 
 " Status line
@@ -212,6 +216,9 @@ set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 " Don't show preview window
 set completeopt-=preview
 
+" Always show sign column
+set signcolumn=yes
+
 " 2 space indentation
 augroup two_space_indent
   autocmd!
@@ -224,6 +231,3 @@ augroup two_space_indent
                  \,yaml
             \ setlocal ts=2 sw=2
 augroup END
-
-" Always show sign column
-set signcolumn=yes
