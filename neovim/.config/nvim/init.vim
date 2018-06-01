@@ -48,88 +48,52 @@ Plug 'zachwhaley/vim-snippets'
 call plug#end()
 
 
-""""""""""""
-" Settings "
-""""""""""""
+"""""""""""""""""""
+" Plugin Settings "
+"""""""""""""""""""
 
-" I save way too often to need a backup file
-set noswapfile
-set nobackup
+" Color scheme
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
 
-" Indenting
-set tabstop=4    " tab stop is 4 characters
-set shiftwidth=4 " indent also with 4 spaces
-set expandtab    " use spaces in place of tabs
+" Status line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-"" More intuitive window splitting
-set splitright
-set splitbelow
+" Sy Source control options
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_change = '~'
+let g:signify_sign_delete = '-'
 
-" More readable wrapping
-set linebreak
-set showbreak=↪\ 
+"" Highlights
+" C++
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+" Python
+let g:python_highlight_all = 1
 
-" Wrap lines at 95 chars.
-set wrapmargin=95
-set textwidth=95
+" Don't map <C-h> to delete pairs
+let g:AutoPairsMapCh = 0
 
-" Show line numbers on
-set number
+" Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
 
-" Show real-time search/replace
-set inccommand=nosplit
-" Be smart when searching
-set ignorecase
-set smartcase
-
-" Mouse support
-set mouse=a
-
-" Dark colorscheme
-set background=dark
-
-" Highlight matching braces
-set showmatch
-
-" Folding
-set nofoldenable " don't fold by default"
-set foldmethod=syntax
-
-" Show trailing whitespace and tabs
-set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
-
-" Don't show preview window
-set completeopt-=preview
-
-" Colors
-colorscheme gruvbox
-set termguicolors
-
-" 2 space indentation
-augroup two_space_indent
-  autocmd!
-  autocmd FileType javascript,coffee
-                 \,html,css
-                 \,sh,zsh
-                 \,proto
-                 \,vim
-                 \,ruby,eruby
-                 \,yaml
-            \ setlocal ts=2 sw=2
-augroup END
-
-" Always show sign column
-highlight SignColumn ctermbg=8
-augroup show_sign_column
-  autocmd!
-  autocmd BufEnter * sign define dummy
-  autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
-augroup END
-
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+"" deoplete
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
+"let g:deoplete#auto_complete_delay = 0
+"
+"" deoplete clang
+"let g:deoplete#sources#clang#executable = '/usr/bin/clang'
+"
+"" disabled completion from vim-jedi
+"let g:jedi#completions_enabled = 0
+"let g:jedi#goto_assignments_command = "<Leader>f"
+"let g:jedi#force_py_version = 3
 
 
 """"""""""""
@@ -187,48 +151,79 @@ nnoremap <C-m> :TagbarToggle<CR>
 nmap <Leader>gj <Plug>(signify-next-hunk)
 nmap <Leader>gk <Plug>(signify-prev-hunk)
 
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
 
-"""""""""""""""""""
-" Plugin Settings "
-"""""""""""""""""""
 
-" Status line
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#right_sep = ' '
+""""""""""""
+" Settings "
+""""""""""""
 
-" Sy Source control options
-let g:signify_vcs_list = [ 'git' ]
-let g:signify_sign_change = '~'
-let g:signify_sign_delete = '-'
+" I save way too often to need a backup file
+set noswapfile
+set nobackup
 
-"" Highlights
-let g:cpp_class_scope_highlight = 1
-let g:python_highlight_all = 1
+" Indenting
+set tabstop=4    " tab stop is 4 characters
+set shiftwidth=4 " indent also with 4 spaces
+set expandtab    " use spaces in place of tabs
 
-" Don't map <C-h> to delete pairs
-let g:AutoPairsMapCh = 0
+"" More intuitive window splitting
+set splitright
+set splitbelow
 
-" Tagbar
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
+" More readable wrapping
+set linebreak
+set showbreak=↪\ 
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 0
-"" <CR>: close popup and save indent.
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"function! s:my_cr_function() abort
-"  return deoplete#close_popup() . "\<CR>"
-"endfunction
+" Wrap lines at 95 chars.
+set wrapmargin=95
+set textwidth=95
 
-" deoplete clang
-let g:deoplete#sources#clang#executable = '/usr/bin/clang'
+" Show line numbers on
+set number
 
-" disabled completion from vim-jedi
-let g:jedi#completions_enabled = 0
-let g:jedi#goto_assignments_command = "<Leader>f"
-let g:jedi#force_py_version = 3
+" Show real-time search/replace
+set inccommand=nosplit
+" Be smart when searching
+set ignorecase
+set smartcase
+
+" Mouse support
+set mouse=a
+
+" Colors
+colorscheme gruvbox
+set background=dark
+set termguicolors
+
+" Highlight matching braces
+set showmatch
+
+" Folding
+set nofoldenable " don't fold by default"
+set foldmethod=syntax
+
+" Show trailing whitespace and tabs
+set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
+
+" Don't show preview window
+set completeopt-=preview
+
+" 2 space indentation
+augroup two_space_indent
+  autocmd!
+  autocmd FileType javascript,coffee
+                 \,html,css
+                 \,sh,zsh
+                 \,proto
+                 \,vim
+                 \,ruby,eruby
+                 \,yaml
+            \ setlocal ts=2 sw=2
+augroup END
+
+" Always show sign column
+set signcolumn=yes
