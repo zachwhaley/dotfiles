@@ -149,7 +149,10 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :NERDTreeToggle %<CR>
 
 " Tagbar
-nnoremap <C-m> :TagbarToggle<CR>
+nnoremap <C-m> :TagbarOpen j<CR>
+
+" FZF
+nnoremap <C-p> :FZF<CR>
 
 " Hunk jumping
 nmap <Leader>gj <Plug>(signify-next-hunk)
