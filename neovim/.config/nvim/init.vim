@@ -210,6 +210,7 @@ set termguicolors
 if g:colors_name == 'gruvbox'
   highlight! link cString GruvboxPurple
   highlight! link cOperator GruvboxRed
+  highlight! link cppOperator GruvboxRed
 endif
 
 " Highlight matching braces
