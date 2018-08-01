@@ -17,6 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/a.vim'
 Plug 'zachwhaley/auto-pairs'
+Plug 'tpope/vim-sleuth'
 
 " Theme plugins
 Plug 'morhetz/gruvbox'
