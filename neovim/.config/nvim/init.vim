@@ -17,10 +17,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/a.vim'
 Plug 'zachwhaley/auto-pairs'
+Plug 'tpope/vim-sleuth'
 
 " Theme plugins
-Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -44,8 +45,125 @@ Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'tpope/vim-liquid'
 Plug 'uarun/vim-protobuf'
 Plug 'zachwhaley/vim-snippets'
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 
 call plug#end()
+
+
+"""""""""""""""""""
+" Plugin Settings "
+"""""""""""""""""""
+
+" Color scheme
+let g:solarized_termtrans = 1
+let g:solarized_term_italics = 0
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 1
+let g:gruvbox_improved_warnings = 1
+
+" Status line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Sy Source control options
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_change = '~'
+let g:signify_sign_delete = '-'
+
+"" Highlights
+" C++
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+" Python
+let g:python_highlight_all = 1
+
+" Don't map <C-h> to delete pairs
+let g:AutoPairsMapCh = 0
+
+" Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+
+"" deoplete
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
+"let g:deoplete#auto_complete_delay = 0
+"
+"" deoplete clang
+"let g:deoplete#sources#clang#executable = '/usr/bin/clang'
+"
+"" disabled completion from vim-jedi
+"let g:jedi#completions_enabled = 0
+"let g:jedi#goto_assignments_command = "<Leader>f"
+"let g:jedi#force_py_version = 3
+
+
+""""""""""""
+" Mappings "
+""""""""""""
+
+let mapleader=";"
+
+noremap <Leader>+ :tabedit $MYVIMRC<CR>
+
+" Natural movement for wrapped lines
+noremap k gk
+noremap j gj
+
+" Insert mode navigation
+inoremap <C-h> <Left>
+inoremap <C-j> <C-o>gj
+inoremap <C-k> <C-o>gk
+inoremap <C-l> <Right>
+
+" Window navigation
+nnoremap <Leader>w <C-w>
+
+" Tab navigation
+nnoremap <Leader>tn gt
+nnoremap <Leader>tp gT
+nnoremap <Leader>tt :tabnew<CR>
+
+" Reverse tab
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <Esc><<i
+nnoremap <Tab> >>
+
+" Yank to end of line
+nnoremap Y y$
+
+" A touch of Emacs
+inoremap <C-a> <Esc>I
+inoremap <C-e> <End>
+nnoremap <C-a> ^
+nnoremap <C-e> <End>
+vnoremap <C-a> ^
+vnoremap <C-e> $
+
+" Terminal mode escape
+tnoremap <Esc> <C-\><C-n>
+
+" Open NERDTree
+nnoremap <C-n> :NERDTreeToggle %<CR>
+
+" Tagbar
+nnoremap <C-m> :TagbarOpen j<CR>
+
+" FZF
+nnoremap <C-p> :FZF<CR>
+
+" Hunk jumping
+nmap <Leader>gj <Plug>(signify-next-hunk)
+nmap <Leader>gk <Plug>(signify-prev-hunk)
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
 
 
 """"""""""""
@@ -85,8 +203,17 @@ set smartcase
 " Mouse support
 set mouse=a
 
-" Dark colorscheme
+" Colors
+colorscheme gruvbox
 set background=dark
+set termguicolors
+
+" Fix colors in C/C++ files
+if g:colors_name == 'gruvbox'
+  highlight! link cString GruvboxPurple
+  highlight! link cOperator GruvboxRed
+  highlight! link cppOperator GruvboxRed
+endif
 
 " Highlight matching braces
 set showmatch
@@ -101,8 +228,8 @@ set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
 " Don't show preview window
 set completeopt-=preview
 
-" Colors
-colorscheme solarized
+" Always show sign column
+set signcolumn=yes
 
 " 2 space indentation
 augroup two_space_indent
@@ -114,120 +241,18 @@ augroup two_space_indent
                  \,vim
                  \,ruby,eruby
                  \,yaml
+                 \,xml
             \ setlocal ts=2 sw=2
 augroup END
 
-" Always show sign column
-highlight SignColumn ctermbg=8
-augroup show_sign_column
-  autocmd!
-  autocmd BufEnter * sign define dummy
-  autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
-augroup END
-
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
-
-
-""""""""""""
-" Mappings "
-""""""""""""
-
-let mapleader=";"
-
-noremap <Leader>+ :tabedit $MYVIMRC<CR>
-
-" Natural movement for wrapped lines
-noremap k gk
-noremap j gj
-
-" Insert mode navigation
-inoremap <C-h> <Left>
-inoremap <C-j> <C-o>gj
-inoremap <C-k> <C-o>gk
-inoremap <C-l> <Right>
-
-" Window navigation
-nnoremap <Leader>w <C-w>
-
-" Tab navigation
-nnoremap <Leader>tn :tabnext<CR>
-nnoremap <Leader>tp :tabprevious<CR>
-nnoremap <Leader>tt :tabnew<CR>
-
-" Reverse tab
-nnoremap <S-Tab> <<
-inoremap <S-Tab> <Esc><<i
-nnoremap <Tab> >>
-
-" Yank to end of line
-nnoremap Y y$
-
-" A touch of Emacs
-inoremap <C-a> <Esc>I
-inoremap <C-e> <End>
-nnoremap <C-a> ^
-nnoremap <C-e> <End>
-vnoremap <C-a> ^
-vnoremap <C-e> $
-
-" Terminal mode escape
-tnoremap <Esc> <C-\><C-n>
-
-" Open NERDTree
-nnoremap <C-n> :NERDTreeToggle %<CR>
-
-" Tagbar
-nnoremap <C-m> :TagbarToggle<CR>
-
-" Hunk jumping
-nmap <Leader>gj <Plug>(signify-next-hunk)
-nmap <Leader>gk <Plug>(signify-prev-hunk)
-
-
-"""""""""""""""""""
-" Plugin Settings "
-"""""""""""""""""""
-
-" Status line
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#right_sep = ' '
-
-" Sy Source control options
-let g:signify_vcs_list = [ 'git' ]
-let g:signify_sign_change = '~'
-let g:signify_sign_delete = '-'
-
-"" Highlights
-let g:cpp_class_scope_highlight = 1
-let g:python_highlight_all = 1
-
-" Don't map <C-h> to delete pairs
-let g:AutoPairsMapCh = 0
-
-" Tagbar
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 0
-"" <CR>: close popup and save indent.
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"function! s:my_cr_function() abort
-"  return deoplete#close_popup() . "\<CR>"
-"endfunction
-
-" deoplete clang
-let g:deoplete#sources#clang#executable = '/usr/bin/clang'
-
-" disabled completion from vim-jedi
-let g:jedi#completions_enabled = 0
-let g:jedi#goto_assignments_command = "<Leader>f"
-let g:jedi#force_py_version = 3
+" Load Cscope
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
