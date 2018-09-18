@@ -45,6 +45,7 @@ Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'tpope/vim-liquid'
 Plug 'uarun/vim-protobuf'
 Plug 'zachwhaley/vim-snippets'
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 
 call plug#end()
 
@@ -123,8 +124,8 @@ inoremap <C-l> <Right>
 nnoremap <Leader>w <C-w>
 
 " Tab navigation
-nnoremap <Leader>tn :tabnext<CR>
-nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>tn gt
+nnoremap <Leader>tp gT
 nnoremap <Leader>tt :tabnew<CR>
 
 " Reverse tab
