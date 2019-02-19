@@ -4,24 +4,24 @@ call plug#begin('~/.config/nvim/plugged')
 let g:plug_threads = 8
 
 " Generic plugins
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/a.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-sleuth'
 
 " Theme plugins
-Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -41,11 +41,11 @@ Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 
 " Misc plugins
 Plug 'garbas/vim-snipmate'
+Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'tpope/vim-liquid'
 Plug 'uarun/vim-protobuf'
 Plug 'zachwhaley/vim-snippets'
-Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 
 call plug#end()
 
