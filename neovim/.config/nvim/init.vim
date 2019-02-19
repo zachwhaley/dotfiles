@@ -245,6 +245,11 @@ augroup two_space_indent
                  \,xml
             \ setlocal ts=2 sw=2
 augroup END
+augroup tab_indent
+  autocmd!
+  autocmd FileType gitcommit
+            \ setlocal noexpandtab
+augroup END
 
 " Load Cscope
 function! LoadCscope()
