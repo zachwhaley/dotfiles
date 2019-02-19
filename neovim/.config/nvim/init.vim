@@ -219,8 +219,9 @@ endif
 set showmatch
 
 " Folding
-set nofoldenable " don't fold by default"
+set foldenable
 set foldmethod=syntax
+set nofoldenable " don't fold by default"
 
 " Show trailing whitespace and tabs
 set list listchars=tab:»\ ,trail:·,nbsp:·,extends:›,precedes:‹
