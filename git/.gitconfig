@@ -29,7 +29,7 @@
 	sync = !git fetch upstream && git merge upstream/master
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 	lfs-fetch = "!git log --all --format=%H --diff-filter=A -n 1 -- \"$1\" | xargs -I% git checkout % && git checkout - #"
-	cleanup = !git fetch --all --prune && git branch -vv | grep -v $(git symbolic-ref --short HEAD) | awk '/.*: gone]/ {print $1}' | xargs git branch -D -v
+	trim = !git fetch --all --prune && git branch -vv | grep -v $(git symbolic-ref --short HEAD) | awk '/.*: gone]/ {print $1}' | xargs git branch -D -v
 [rebase]
 	autosquash = true
 [blame]
