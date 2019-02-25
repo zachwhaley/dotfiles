@@ -151,7 +151,7 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <C-n> :NERDTreeToggle %<CR>
 
 " Tagbar
-nnoremap <C-b> :TagbarOpen j<CR>
+nnoremap <C-k> :TagbarOpen j<CR>
 
 " FZF
 nnoremap <C-p> :FZF<CR>
