@@ -1,18 +1,12 @@
-#!/bin/zsh
+#!/bin/sh
 #
-# bootstrap installs things.
+# bootstrap shell
 
 cd "$(dirname "$0")"
 DOTFILES_ROOT=$(pwd)
 
 set -e
 set +o noclobber
-
-echo ''
-
-info() {
-  printf "  [ \033[00;34m..\033[0m ] $1\n"
-}
 
 user() {
   printf "\r  [ \033[0;33m?\033[0m ] $1 "
@@ -27,6 +21,13 @@ fail() {
   exit
 }
 
+check() {
+  local cmd=$1
+  if ! command which $cmd 1>/dev/null; then
+    fail "$cmd must be installed"
+  fi
+}
+
 link_file() {
   local src=$1 dst=$2
 
@@ -34,7 +35,7 @@ link_file() {
   local action=
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
-    if [[ "$overwrite_all" == "false"  &&  "$backup_all" == "false"  &&  "$skip_all" == "false" ]]; then
+    if [[ "$overwrite_all" == "false" && "$backup_all" == "false" && "$skip_all" == "false" ]]; then
       local currentSrc="$(readlink $dst)"
       if [[ "$currentSrc" == "$src" ]]; then
         skip=true;
@@ -88,11 +89,7 @@ link_file() {
 }
 
 stow_dotfiles() {
-  if ! command which stow 1>/dev/null; then
-    fail 'stow must be installed'
-  fi
-
-  info "installing dot files"
+  check stow
   for src in $(find -maxdepth 1 -type d ! -name  '.*' -printf '%f\n'); do
     if stow $src; then
       success "stowed $src"
@@ -102,23 +99,18 @@ stow_dotfiles() {
   done
 }
 
-setup_zsh() {
-  info "installing zsh files"
-  local overwrite_all=false backup_all=false skip_all=false
-
-  # Mostly from Prezto README on installation
-  git submodule update --init --recursive
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    link_file "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-  if ! [[ "$(getent passwd $LOGNAME | cut -d: -f7)" =~ ".*zsh" ]]; then
-    chsh -s /bin/zsh
+set_shell() {
+  check fish
+  if chsh -s $(chsh -l | grep fish) &>/dev/null; then
+    success "set shell"
+  else
+    fail "failed to set shell"
   fi
 }
 
-stow_dotfiles
-setup_zsh
-
 echo ''
-success "Done!\n"
+
+stow_dotfiles
+set_shell
+
+success "done!\n"
