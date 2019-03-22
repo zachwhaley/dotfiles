@@ -20,6 +20,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/a.vim'
 
 " Theme plugins
+Plug 'dag/vim-fish'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
