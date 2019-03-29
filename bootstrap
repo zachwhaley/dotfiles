@@ -100,9 +100,11 @@ stow_dotfiles() {
 }
 
 set_shell() {
-  check fish
-  if chsh -s $(chsh -l | grep fish) &>/dev/null; then
-    success "set shell"
+  local shell=$1
+  check $shell
+  user "set shell to $shell\n"
+  if chsh -s $(cat /etc/shells | grep $shell); then
+    success "shell set"
   else
     fail "failed to set shell"
   fi
@@ -111,6 +113,6 @@ set_shell() {
 echo ''
 
 stow_dotfiles
-set_shell
+set_shell fish
 
 success "done!\n"
