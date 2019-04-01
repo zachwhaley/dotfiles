@@ -6,7 +6,6 @@ let g:plug_threads = 8
 " Generic plugins
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
