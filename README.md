@@ -1,6 +1,5 @@
 dotfiles
 ========
-
 My dotfiles.
 
 Install
@@ -12,7 +11,10 @@ $ cd ~/dotfiles
 $ ./bootstrap
 ```
 
-Vim plugins
-------------------
+Fish plugins
+------------
+See [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
+Vim plugins
+-----------
 See [junegunn/vim-plug](https://github.com/junegunn/vim-plug)
