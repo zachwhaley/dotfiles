@@ -1,2 +1,3 @@
+package fzf
 package pyenv
 theme default
