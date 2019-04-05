@@ -89,6 +89,13 @@ let g:AutoPairsMapCh = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+
 "" deoplete
 "let g:deoplete#enable_at_startup = 1
 "let g:deoplete#enable_smart_case = 1
@@ -148,8 +155,8 @@ vnoremap <C-e> $
 " Terminal mode escape
 tnoremap <Esc> <C-\><C-n>
 
-" Open NERDTree
-nnoremap <C-n> :NERDTreeToggle %<CR>
+" Open file explorer
+nnoremap <C-n> :Lexplore<CR>
 
 " Tagbar
 nnoremap <C-k> :TagbarOpen j<CR>
@@ -232,6 +239,9 @@ set completeopt-=preview
 
 " Always show sign column
 set signcolumn=yes
+
+" auto-change directory to current file's directory
+autocmd BufEnter * silent! lcd %:p:h
 
 " 2 space indentation
 augroup two_space_indent
