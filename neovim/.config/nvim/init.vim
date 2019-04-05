@@ -173,7 +173,7 @@ endif
 
 " I save way too often to need a backup file
 set noswapfile
-set nobackup
+"set nobackup
 
 " Indenting
 set tabstop=4    " tab stop is 4 characters

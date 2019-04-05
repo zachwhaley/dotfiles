@@ -2,8 +2,7 @@
 colorscheme gruvbox
 
 " Font
-GuiFont Inconsolata:h14
+GuiFont Inconsolata:h16
 
-if @% == ""
-  db
-endif
+" Use TUI tabs
+GuiTabline 0
