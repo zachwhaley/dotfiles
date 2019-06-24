@@ -1,13 +1,6 @@
 function fish_prompt
     set -l last_status $status
 
-    if not set -q __fish_git_prompt_show_informative_status
-        set -g __fish_git_prompt_show_informative_status 1
-    end
-    if not set -q __fish_git_prompt_hide_untrackedfiles
-        set -g __fish_git_prompt_hide_untrackedfiles 1
-    end
-
     if not set -q __fish_git_prompt_color_branch
         set -g __fish_git_prompt_color_branch magenta --bold
     end
