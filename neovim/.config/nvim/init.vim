@@ -10,6 +10,7 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
@@ -89,13 +90,6 @@ let g:AutoPairsMapCh = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
-" Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
-
 "" deoplete
 "let g:deoplete#enable_at_startup = 1
 "let g:deoplete#enable_smart_case = 1
@@ -156,7 +150,7 @@ vnoremap <C-e> $
 tnoremap <Esc> <C-\><C-n>
 
 " Open file explorer
-nnoremap <C-n> :Lexplore<CR>
+nnoremap <C-d> :NERDTreeToggle<CR>
 
 " Tagbar
 nnoremap <C-k> :TagbarOpen j<CR>
@@ -241,7 +235,7 @@ set completeopt-=preview
 set signcolumn=yes
 
 " auto-change directory to current file's directory
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 
 " 2 space indentation
 augroup two_space_indent
