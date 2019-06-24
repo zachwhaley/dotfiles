@@ -18,6 +18,7 @@
 	br = branch
 	st = status
 	ci = commit
+	pr = "!hub pull-request -a $(id -un) -b \"$1\" -o #"
 	cp = cherry-pick
 	di = diff
 	sd = diff --staged
