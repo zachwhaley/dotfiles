@@ -14,22 +14,21 @@
 [core]
 	editor = nvim
 [alias]
-	co = checkout
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 	br = branch
-	st = status
 	ci = commit
-	pr = "!hub pull-request -a $(id -un) -b \"$1\" -o #"
+	co = checkout
 	cp = cherry-pick
 	di = diff
-	sd = diff --staged
+	dif = diff
+	lfs-fetch = "!git log --all --format=%H --diff-filter=A -n 1 -- \"$1\" | xargs -I% git checkout % && git checkout - #"
 	lg = log --oneline --graph --format='format:%C(auto)%h%d %s%C(dim white) · %an · %C(green)%cr%C(reset)'
 	lgg = log --oneline --graph --date='format:%Y %b %d' --format='format:%C(auto)%h%d %s%C(dim white) · %an <%ae> · %C(green)%cd%C(reset)'
-	dif = diff
-	sho = show
+	pr = "!hub pull-request -a $(id -un) -b \"$1\" -o #"
 	pul = pull
-	sync = !git fetch upstream && git merge upstream/master
-	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
-	lfs-fetch = "!git log --all --format=%H --diff-filter=A -n 1 -- \"$1\" | xargs -I% git checkout % && git checkout - #"
+	sd = diff --staged
+	sho = show
+	st = status
 	trim = !git fetch --all --prune && git branch -vv | grep -v $(git symbolic-ref --short HEAD) | awk '/.*: gone]/ {print $1}' | xargs git branch -D -v
 [rebase]
 	autosquash = true
