@@ -1,5 +1,6 @@
 alias vi nvim
 alias tm tmux
+alias tma "tm a"
 
 set -gx EDITOR vi
 
