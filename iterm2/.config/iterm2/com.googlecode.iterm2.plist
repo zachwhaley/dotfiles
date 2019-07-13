@@ -362,6 +362,8 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelSizeSliderParams</key>
+	<string>1 0 100</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -381,7 +383,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAc7Gdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -403,13 +405,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>2496 338 445 77 1680 -30 1920 1057 </string>
+	<string>684 33 445 77 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>2009 176 597 430 1680 -30 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2240 371 918 423 1680 -30 1920 1057 </string>
+	<string>253 569 918 423 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 164 1915 863 1680 -30 1920 1057 </string>
+	<string>0 525 730 502 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1151,6 +1153,8 @@
 	<real>584568528.26390004</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>2</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1197,7 +1201,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-07-11T20:33:07Z</date>
+	<date>2019-07-12T21:09:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
