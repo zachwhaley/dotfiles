@@ -1,8 +1,7 @@
 prompt_zachwhaley_setup () {
 
-  PROMPT="%F{blue}╭ %F{yellow}%~%f
-%F{blue}╰ %(?.%F{green}.%F{red})→%f "
-  prompt_opts=(cr percent)
+  PROMPT="%B%F{blue}╭ %F{yellow}%~%f
+%F{blue}╰ %(?.%F{green}.%F{red})→%f%b "
 }
 
 prompt_zachwhaley_setup "$@"
