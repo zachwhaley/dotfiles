@@ -66,6 +66,6 @@ function fish_prompt
         set arrow "$arrow_color# "
     end
 
-    echo -s    "$blue╭ " $yellow(prompt_pwd) $normal(__fish_vcs_prompt)
+    echo -s    "$blue╭ " $yellow(prompt_pwd) $normal(__fish_git_prompt)
     echo -n -s "$blue╰ " $arrow
 end
