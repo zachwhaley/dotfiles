@@ -411,7 +411,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>266 1558 796 486 -176 1050 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2096 1050 1920 1057 -2096 1050 1920 1057 </string>
+	<string>-176 1050 1920 1057 -176 1050 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_814D2016-EFC9-40A0-836A-B8D30AFBA3F1</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_814D2016-EFC9-40A0-836A-B8D30AFBA3F1_selection</key>
@@ -1072,11 +1072,11 @@
 			<key>Normal Font</key>
 			<string>Inconsolata-Regular 18</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Rows</key>
 			<integer>80</integer>
 			<key>Screen</key>
@@ -1165,6 +1165,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>2</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1200,6 +1202,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>~/.config/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1211,7 +1215,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-07-15T15:12:21Z</date>
+	<date>2019-07-16T15:12:22Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
