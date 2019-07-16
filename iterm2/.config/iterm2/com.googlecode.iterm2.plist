@@ -411,7 +411,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>266 1558 796 486 -176 1050 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-176 1073 1920 1034 -176 1050 1920 1057 </string>
+	<string>-2096 1050 1920 1057 -2096 1050 1920 1057 </string>
+	<key>NeverWarnAboutShortLivedSessions_814D2016-EFC9-40A0-836A-B8D30AFBA3F1</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_814D2016-EFC9-40A0-836A-B8D30AFBA3F1_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
