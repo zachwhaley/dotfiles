@@ -1,7 +1,15 @@
+# vim: ft=zsh
+
 prompt_zachwhaley_setup () {
 
-  PROMPT="%B%F{blue}╭ %F{yellow}%~%f
-%F{blue}╰ %(?.%F{green}.%F{red})→%f%b "
+  source /usr/local/etc/bash_completion.d/git-prompt.sh
+  setopt PROMPT_SUBST
+
+  export GIT_PS1_SHOWUPSTREAM=1
+  export GIT_PS1_SHOWCOLORHINTS=1
+  export GIT_PS1_DESCRIBE_STYLE=1
+  NEWLINE=$'\n'
+  precmd () { __git_ps1 "%F{blue}╭ %B%F{yellow}%~%f%b" "$NEWLINE%F{blue}╰ %B%(?.%F{green}.%F{red})→%f%b " }
 }
 
 prompt_zachwhaley_setup "$@"
