@@ -48,6 +48,7 @@ Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'tpope/vim-liquid'
 Plug 'uarun/vim-protobuf'
 Plug 'zachwhaley/vim-snippets'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
 
