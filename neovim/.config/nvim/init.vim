@@ -49,6 +49,7 @@ Plug 'tpope/vim-liquid'
 Plug 'uarun/vim-protobuf'
 Plug 'zachwhaley/vim-snippets'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
