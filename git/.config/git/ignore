@@ -7,3 +7,5 @@ Session.vim
 
 tags
 cscope.*
+
+.DS_Store

@@ -20,6 +20,10 @@ alias lla='ll -A'
 
 alias tmux='tmux -2'
 alias tm='tmux'
+alias tma='tmux a'
+
+alias python=python3
+alias py=python
 
 unsetopt CORRECT
 unsetopt NOMATCH
@@ -31,8 +35,9 @@ promptinit
 prompt zachwhaley
 
 # pyenv
-eval "$(pyenv init - --no-rehash zsh)"
-eval "$(pyenv virtualenv-init - zsh)"
+if which pyenv-virtualenv-init > /dev/null
+then eval "$(pyenv virtualenv-init -)"
+fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
