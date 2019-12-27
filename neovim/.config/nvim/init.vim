@@ -33,7 +33,7 @@ Plug 'tpope/vim-fugitive'
 
 " Python plugins
 "Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-"Plug 'vim-python/python-syntax', { 'for': ['python'] }
+Plug 'vim-python/python-syntax', { 'for': ['python'] }
 "Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 
 " C/C++ plugins
@@ -168,6 +168,8 @@ nmap <Leader>gk <Plug>(signify-prev-hunk)
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
+
+nnoremap <leader>cd :cd %:p:h<CR>
 
 
 """"""""""""
