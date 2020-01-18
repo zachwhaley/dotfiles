@@ -123,6 +123,6 @@ echo ''
 
 stow_dotfiles
 setup_mac
-set_shell fish
+set_shell zsh
 
 success "done!\n"

@@ -1,6 +1,15 @@
+path=(
+  $HOME/.local/bin
+  /usr/local/{bin,sbin}
+  $path
+)
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+# Remove / from WORDCHARS so that I can alt-move through directories
+WORDCHARS=${WORDCHARS/\//}
+
 unsetopt beep extendedglob
 bindkey -e
 
@@ -10,6 +19,11 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 autoload -Uz compinit
 compinit
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+export PAGER='less'
+export LESS='-F -g -i -M -R -w -X -z-4'
 
 alias vi=nvim
 alias ls='ls -FG'
@@ -44,3 +58,5 @@ fi
 
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Auto suggestion
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
