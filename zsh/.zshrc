@@ -1,5 +1,6 @@
 path=(
   $HOME/.local/bin
+  /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
   $path
 )
