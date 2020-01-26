@@ -4,6 +4,11 @@ path=(
   /usr/local/{bin,sbin}
   $path
 )
+fpath=(
+  $HOME/.zprompts
+  $HOME/.zfuncs
+  $fpath
+)
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -11,15 +16,19 @@ SAVEHIST=1000
 # Remove / from WORDCHARS so that I can alt-move through directories
 WORDCHARS=${WORDCHARS/\//}
 
-unsetopt beep extendedglob
+unsetopt beep
+unsetopt extendedglob
+unsetopt correct
+unsetopt nomatch
+
+setopt complete_aliases
+
 bindkey -e
 
 zstyle :compinstall filename $HOME/.zshrc
 zstyle ':completion:*' menu select
 
-setopt COMPLETE_ALIASES
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -40,14 +49,8 @@ alias tma='tmux a'
 alias python=python3
 alias py=python
 
-unsetopt CORRECT
-unsetopt NOMATCH
-
 # Prompt
-fpath=( "$HOME/.zprompts" $fpath )
-autoload -Uz promptinit
-promptinit
-prompt zachwhaley
+autoload -Uz promptinit && promptinit && prompt zachwhaley
 
 # pyenv
 if which pyenv-virtualenv-init > /dev/null
@@ -56,7 +59,6 @@ fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Auto suggestion
