@@ -5,24 +5,22 @@ let g:plug_threads = 8
 
 " Generic plugins
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
 Plug 'jiangmiao/auto-pairs'
-Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/a.vim'
+Plug 'zachwhaley/vim-snippets'
 
 " Theme plugins
-Plug 'dag/vim-fish'
-Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -31,25 +29,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-" Python plugins
-"Plug 'davidhalter/jedi-vim', { 'for': ['python'] }
-Plug 'vim-python/python-syntax', { 'for': ['python'] }
-"Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-
-" C/C++ plugins
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zachwhaley/cscope_macros.vim'
-Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
-
-" Misc plugins
-Plug 'garbas/vim-snipmate'
+" Language plugins
+Plug 'dag/vim-fish'
+Plug 'hashivim/vim-terraform', { 'for': ['terraform'] }
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
-Plug 'tpope/vim-liquid'
-Plug 'uarun/vim-protobuf'
-Plug 'zachwhaley/vim-snippets'
 Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-liquid'
+Plug 'vim-python/python-syntax', { 'for': ['python'] }
+Plug 'zachwhaley/cscope_macros.vim'
+Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 
 call plug#end()
 
@@ -77,7 +66,6 @@ let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
-"" Highlights
 " C++
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -92,19 +80,8 @@ let g:AutoPairsMapCh = 0
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
-"" deoplete
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#enable_smart_case = 1
-"let g:deoplete#auto_complete_delay = 0
-"
-"" deoplete clang
-"let g:deoplete#sources#clang#executable = '/usr/bin/clang'
-"
-"" disabled completion from vim-jedi
-"let g:jedi#completions_enabled = 0
-"let g:jedi#goto_assignments_command = "<Leader>f"
-"let g:jedi#force_py_version = 3
-
+" FZF
+set rtp+=/usr/local/opt/fzf
 
 """"""""""""
 " Mappings "
