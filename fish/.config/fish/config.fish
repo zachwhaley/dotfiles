@@ -4,6 +4,9 @@ alias tma "tm a"
 alias tf terraform
 alias tg terragrunt
 
+alias python python3
+alias py python
+
 set -gx EDITOR vi
 set -gx TF_PLUGIN_CACHE_DIR ~/.terraform.d/plugin_cache
 
