@@ -18,6 +18,7 @@
 	co = checkout
 	cp = cherry-pick
 	di = diff
+	sw = switch
 	dif = diff
 	lfs-fetch = "!git log --all --format=%H --diff-filter=A -n 1 -- \"$1\" | xargs -I% git checkout % && git checkout - #"
 	lg = log --oneline --graph --format='format:%C(auto)%h%d %s%C(dim white) · %an · %C(green)%cr%C(reset)'
@@ -39,3 +40,5 @@
 	required = true
 [hub]
 	host = dsgithub.trendmicro.com
+[user]
+	name = Zachary Whaley

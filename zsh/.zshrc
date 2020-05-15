@@ -1,6 +1,7 @@
 path=(
   $HOME/.local/bin
   $HOME/.pyenv/bin
+  /usr/local/opt/python/libexec/bin
   /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
   $path
@@ -41,7 +42,7 @@ export LESS='-F -g -i -M -R -w -X -z-4'
 export TF_PLUGIN_CACHE_DIR=~/.terraform.d/plugin_cache
 
 alias vi=nvim
-alias ls='ls -FG --color=auto'
+alias ls='ls -FG'
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -lh'
@@ -54,7 +55,6 @@ alias tma='tmux a'
 alias tf=terraform
 alias tg=terragrunt
 
-alias python=python3
 alias py=python
 
 # Prompt
