@@ -42,3 +42,5 @@
 	host = dsgithub.trendmicro.com
 [user]
 	name = Zachary Whaley
+[pull]
+	rebase = false
