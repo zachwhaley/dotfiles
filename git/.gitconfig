@@ -44,3 +44,5 @@
 	name = Zachary Whaley
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
