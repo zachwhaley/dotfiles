@@ -4,6 +4,7 @@ path=(
   /usr/local/opt/python/libexec/bin
   /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
+  $HOME/go/bin
   $path
 )
 fpath=(
@@ -40,6 +41,8 @@ export PAGER=less
 export LESS='-F -g -i -M -R -w -X -z-4'
 
 export TF_PLUGIN_CACHE_DIR=~/.terraform.d/plugin_cache
+
+export GOPATH=$HOME/go
 
 alias vi=nvim
 alias ls='ls -FG'
