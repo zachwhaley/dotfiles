@@ -42,6 +42,7 @@
 	host = dsgithub.trendmicro.com
 [user]
 	name = Zachary Whaley
+	email = zachbwhaley@gmail.com
 [pull]
 	rebase = false
 [init]

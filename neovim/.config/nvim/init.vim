@@ -40,6 +40,7 @@ Plug 'vim-python/python-syntax', { 'for': ['python'] }
 Plug 'zachwhaley/cscope_macros.vim'
 Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
+Plug 'fatih/vim-go', { 'for': ['go'] }
 
 call plug#end()
 

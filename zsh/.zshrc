@@ -43,6 +43,10 @@ export LESS='-F -g -i -M -R -w -X -z-4'
 export TF_PLUGIN_CACHE_DIR=~/.terraform.d/plugin_cache
 
 export GOPATH=$HOME/go
+path=(
+  $GOPATH/bin
+  $path
+)
 
 alias vi=nvim
 alias ls='ls -FG'
@@ -65,7 +69,7 @@ autoload -Uz promptinit && promptinit && prompt zachwhaley
 
 # pyenv
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
