@@ -5,7 +5,6 @@ let g:plug_threads = 8
 
 " Generic plugins
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
@@ -18,7 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/a.vim'
-Plug 'zachwhaley/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Theme plugins
 Plug 'morhetz/gruvbox'
@@ -31,7 +30,7 @@ Plug 'tpope/vim-fugitive'
 
 " Language plugins
 Plug 'dag/vim-fish'
-Plug 'hashivim/vim-terraform', { 'for': ['terraform'] }
+Plug 'hashivim/vim-terraform'
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
 Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -84,6 +83,9 @@ let g:tagbar_autofocus = 1
 
 " FZF
 set rtp+=/usr/local/opt/fzf
+
+" Terraform
+let g:terraform_fmt_on_save = 1
 
 """"""""""""
 " Mappings "
@@ -150,6 +152,18 @@ endif
 
 nnoremap <leader>cd :cd %:p:h<CR>
 
+" coc.nvim GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc.nvim use tab for auto-completion
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 """"""""""""
 " Settings "
@@ -172,9 +186,9 @@ set splitbelow
 set linebreak
 set showbreak=↪\ 
 
-" Wrap lines at 95 chars.
-set wrapmargin=95
-set textwidth=95
+" Wrap lines at 120 chars.
+set wrapmargin=160
+set textwidth=160
 
 " Show line numbers on
 set number
@@ -219,6 +233,13 @@ set signcolumn=yes
 
 " auto-change directory to current file's directory
 "autocmd BufEnter * silent! lcd %:p:h
+
+" Set HCL as terraform
+augroup hcl_ft
+  au!
+  autocmd BufNewFile,BufRead *.hcl set syntax=terraform
+augroup END
+
 
 " 2 space indentation
 augroup two_space_indent
