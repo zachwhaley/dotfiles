@@ -1,16 +1,27 @@
 # vim: ft=zsh
 
 prompt_zachwhaley_setup () {
-
   [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ] && source /usr/local/etc/bash_completion.d/git-prompt.sh
   [ -f /usr/share/doc/git/contrib/completion/git-prompt.sh ] && source /usr/share/doc/git/contrib/completion/git-prompt.sh
+  [ -f ~/.zfuncs/shrink_path.zsh ] && source ~/.zfuncs/shrink_path.zsh
   setopt PROMPT_SUBST
 
   export GIT_PS1_SHOWUPSTREAM=1
   export GIT_PS1_SHOWCOLORHINTS=1
   export GIT_PS1_DESCRIBE_STYLE=1
+
   NEWLINE=$'\n'
-  precmd () { __git_ps1 "%F{blue}╭ %B%F{yellow}%~%f%b" "$NEWLINE%F{blue}╰ %B%(?.%F{green}.%F{red})→%f%b " }
+  precmd () {
+    local aws_login
+    if [[ -v AWS_PROFILE ]]; then
+      if [[ $AWS_PROFILE == 'production' ]]; then
+        aws_login=" [%F{magenta}aws %B%F{red}%K{white} ${AWS_PROFILE:u} %k%f%b%f]"
+      else
+        aws_login=" [%F{magenta}aws ${AWS_PROFILE}%f]"
+      fi
+    fi
+    __git_ps1 "%F{blue}╭ %B%F{yellow}$(shrink_path -f)%f%b$aws_login" "$NEWLINE%F{blue}╰ %B%(?.%F{green}.%F{red})→%f%b "
+  }
 }
 
 prompt_zachwhaley_setup "$@"

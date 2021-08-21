@@ -1,7 +1,5 @@
 path=(
   $HOME/.local/bin
-  $HOME/.pyenv/bin
-  /usr/local/opt/python/libexec/bin
   /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
   $HOME/go/bin
@@ -48,7 +46,7 @@ path=(
 
 alias vi=nvim
 alias ls='ls -FG'
-alias l='ls'
+alias l='ls -1'
 alias la='ls -A'
 alias ll='ls -lh'
 alias lla='ll -A'
@@ -67,10 +65,13 @@ autoload -Uz promptinit && promptinit && prompt zachwhaley
 
 # pyenv
 eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+# History substring search
+[ -f /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 # Syntax highlighting
 [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
