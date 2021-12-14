@@ -15,12 +15,10 @@ prompt_zachwhaley_setup () {
     local aws_login
     if [[ -v AWS_PROFILE ]]; then
       aws_login=" [%F{magenta}aws"
-      if [[ $AWS_PROFILE == 'production' ]]; then
-        local stack=${C1NS_STACK:-none}
-        if [[ $C1NS_STACK == 'production' ]]; then stack='prod-us-1'; fi
-        aws_login="$aws_login %B%F{red}%K{white} ${AWS_PROFILE:u} %k%f%b %F{magenta}$stack%f"
+      if [[ $AWS_PROFILE == 'production' || $AWS_PROFILE == 'prod-admin' ]]; then
+        aws_login="$aws_login %B%F{red}%K{white} ${AWS_PROFILE:u} %k%f%b %F{magenta}${C1NS_STACK} ${AWS_DEFAULT_REGION:-no-region}%f"
       else
-        aws_login="$aws_login ${AWS_PROFILE} ${AWS_DEFAULT_REGION}"
+        aws_login="$aws_login ${AWS_PROFILE} ${AWS_DEFAULT_REGION:-no-region}"
       fi
       aws_login="$aws_login%f]"
     fi

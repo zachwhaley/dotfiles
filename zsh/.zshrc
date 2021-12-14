@@ -65,7 +65,6 @@ autoload -Uz promptinit && promptinit && prompt zachwhaley
 
 # pyenv
 eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -91,3 +90,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#awslogin develop
+#export AWS_PROFILE=develop
+#export CODEARTIFACT_TOKEN=$(aws codeartifact get-authorization-token --domain trendmicro --domain-owner 764255788659 --region us-west-2 --duration-seconds 3600 --query authorizationToken --output text)
+
+export TF_RECREATE_MISSING_LAMBDA_PACKAGE='false'
+export TERRAGRUNT_TFPATH=tf15
