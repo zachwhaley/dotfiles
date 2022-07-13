@@ -10,6 +10,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree'
 
 " Theme plugins
 Plug 'morhetz/gruvbox'
