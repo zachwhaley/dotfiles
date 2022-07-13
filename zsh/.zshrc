@@ -2,7 +2,6 @@ path=(
   $HOME/.local/bin
   /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
-  $HOME/go/bin
   $path
 )
 fpath=(
@@ -58,12 +57,14 @@ alias tma='tmux a'
 alias tf=terraform
 alias tg=terragrunt
 
+alias python=python3
 alias py=python
 
 # Prompt
 autoload -Uz promptinit && promptinit && prompt zachwhaley
 
 # pyenv
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # FZF
@@ -89,11 +90,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#awslogin develop
-#export AWS_PROFILE=develop
-#export CODEARTIFACT_TOKEN=$(aws codeartifact get-authorization-token --domain trendmicro --domain-owner 764255788659 --region us-west-2 --duration-seconds 3600 --query authorizationToken --output text)
-
-export TF_RECREATE_MISSING_LAMBDA_PACKAGE='false'
-export TERRAGRUNT_TFPATH=tf15

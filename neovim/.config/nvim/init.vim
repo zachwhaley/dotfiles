@@ -3,21 +3,13 @@ call plug#begin('~/.config/nvim/plugged')
 
 let g:plug_threads = 8
 
-" Generic plugins
-Plug 'MarcWeber/vim-addon-mw-utils'
+" General plugins
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/a.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Theme plugins
 Plug 'morhetz/gruvbox'
@@ -29,20 +21,14 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " Language plugins
-Plug 'dag/vim-fish'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
-Plug 'kchmck/vim-coffee-script', { 'for': ['coffee'] }
-Plug 'kergoth/vim-bitbake', { 'for': ['bitbake']  }
 Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'tpope/vim-liquid'
 Plug 'vim-python/python-syntax', { 'for': ['python'] }
-Plug 'zachwhaley/cscope_macros.vim'
-Plug 'zachwhaley/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
 call plug#end()
-
 
 """""""""""""""""""
 " Plugin Settings "
@@ -67,19 +53,11 @@ let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
-" C++
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
 " Python
 let g:python_highlight_all = 1
 
 " Don't map <C-h> to delete pairs
 let g:AutoPairsMapCh = 0
-
-" Tagbar
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
 
 " FZF
 set rtp+=/usr/local/opt/fzf
@@ -118,9 +96,6 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <Esc><<i
 nnoremap <Tab> >>
 
-" Yank to end of line
-nnoremap Y y$
-
 " A touch of Emacs
 inoremap <C-a> <Esc>I
 inoremap <C-e> <End>
@@ -150,6 +125,7 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
+" Change cwd to directory of open file
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " coc.nvim GoTo code navigation.
@@ -157,13 +133,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" coc.nvim use tab for auto-completion
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 """"""""""""
 " Settings "
@@ -186,7 +155,7 @@ set splitbelow
 set linebreak
 set showbreak=↪\ 
 
-" Wrap lines at 120 chars.
+" Wrap lines
 set wrapmargin=160
 set textwidth=160
 
@@ -231,43 +200,8 @@ set completeopt-=preview
 " Always show sign column
 set signcolumn=yes
 
-" auto-change directory to current file's directory
-"autocmd BufEnter * silent! lcd %:p:h
-
-" Set HCL as terraform
-augroup hcl_ft
-  au!
-  autocmd BufNewFile,BufRead *.hcl set syntax=terraform
-augroup END
-
-
-" 2 space indentation
-augroup two_space_indent
-  autocmd!
-  autocmd FileType javascript,coffee
-                 \,html,css
-                 \,sh,zsh
-                 \,proto
-                 \,vim
-                 \,ruby,eruby
-                 \,yaml
-                 \,xml
-            \ setlocal ts=2 sw=2
-augroup END
 augroup tab_indent
   autocmd!
   autocmd FileType gitcommit
             \ setlocal noexpandtab
 augroup END
-
-" Load Cscope
-function! LoadCscope()
-  let db = findfile("cscope.out", ".;")
-  if (!empty(db))
-    let path = strpart(db, 0, match(db, "/cscope.out$"))
-    set nocscopeverbose " suppress 'duplicate connection' error
-    exe "cs add " . db . " " . path
-    set cscopeverbose
-  endif
-endfunction
-au BufEnter /* call LoadCscope()
