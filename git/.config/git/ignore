@@ -12,3 +12,4 @@ cscope.*
 
 .python-version
 .vscode/
+.idea/

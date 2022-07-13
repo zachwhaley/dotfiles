@@ -19,14 +19,14 @@
 	cp = cherry-pick
 	di = diff
 	sw = switch
+	re = restore
 	dif = diff
 	lfs-fetch = "!git log --all --format=%H --diff-filter=A -n 1 -- \"$1\" | xargs -I% git checkout % && git checkout - #"
 	lg = log --oneline --graph --format='format:%C(auto)%h%d %s%C(dim white) · %an · %C(green)%cr%C(reset)'
 	lgg = log --oneline --graph --date='format:%Y %b %d' --format='format:%C(auto)%h%d %s%C(dim white) · %an <%ae> · %C(green)%cd%C(reset)'
-	pr = "!hub pull-request -a $(id -un) -b \"$1\" #"
 	pul = pull
-	sd = diff --staged
-	sho = show
+	ds = diff --staged
+	sh = show
 	st = status
 	trim = !git fetch --all --prune && git branch -vv | grep -v $(git symbolic-ref --short HEAD) | awk '/.*: gone]/ {print $1}' | xargs git branch -D -v
 [rebase]
