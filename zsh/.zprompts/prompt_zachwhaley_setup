@@ -1,9 +1,6 @@
 # vim: ft=zsh
 
 prompt_zachwhaley_setup () {
-  [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ] && source /usr/local/etc/bash_completion.d/git-prompt.sh
-  [ -f /usr/share/doc/git/contrib/completion/git-prompt.sh ] && source /usr/share/doc/git/contrib/completion/git-prompt.sh
-  [ -f ~/.zfuncs/shrink_path.zsh ] && source ~/.zfuncs/shrink_path.zsh
   setopt PROMPT_SUBST
 
   export GIT_PS1_SHOWUPSTREAM=1
