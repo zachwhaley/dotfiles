@@ -2,6 +2,7 @@ path=(
   $HOME/.local/bin
   /usr/local/opt/ruby/bin
   /usr/local/{bin,sbin}
+  /Users/zacharyw/Library/Python/3.9/bin
   $path
 )
 fpath=(
