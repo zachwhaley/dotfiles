@@ -1,6 +1,6 @@
 path=(
   $HOME/.local/bin
-  /usr/local/opt/ruby/bin
+  $HOME/.npm-global/bin
   /usr/local/{bin,sbin}
   /Users/zacharyw/Library/Python/3.9/bin
   $path
@@ -8,6 +8,7 @@ path=(
 fpath=(
   $HOME/.zprompts
   $HOME/.zfuncs
+  $HOMEBREW_PREFIX/share/zsh/site-functions
   $fpath
 )
 
@@ -102,3 +103,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+eval "$(rbenv init - zsh)"
+
+# AWS Azure AD login
+export AZURE_APP_ID_URI=https://signin.aws.amazon.com/saml
+export AZURE_TENANT_ID=3e04753a-ae5b-42d4-a86d-d6f05460f9e4
+
+# Pipenv
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
