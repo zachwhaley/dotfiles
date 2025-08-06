@@ -7,6 +7,7 @@ vim.call('plug#begin')
 Plug('jiangmiao/auto-pairs')
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim', {['branch'] = '0.1.x'})
+Plug('nvim-treesitter/nvim-treesitter')
 Plug('scrooloose/nerdtree')
 Plug('tpope/vim-repeat')
 Plug('tpope/vim-surround')
@@ -25,7 +26,8 @@ Plug('tpope/vim-fugitive')
 -- Language plugins
 Plug('neovim/nvim-lspconfig')
 Plug('neoclide/coc.nvim', {['branch'] = 'release'})
-Plug('fatih/vim-go', {['for'] = 'go'})
+Plug('fatih/vim-go', {['for'] = 'go', ['do'] = ':GoUpdateBinaries'})
+--Plug('ray-x/go.nvim', {['for'] = 'go'})
 Plug('hashivim/vim-terraform', {['for'] = 'terraform'})
 Plug('pangloss/vim-javascript', {['for'] = 'javascript'})
 Plug('vim-python/python-syntax', {['for'] = 'python'})
@@ -46,6 +48,12 @@ vim.g.gruvbox_improved_warnings = 1
 vim.g.signify_sign_change = '~'
 vim.g.signify_sign_delete = '-'
 
+-- Terraform
+vim.g.terraform_fmt_on_save = 1
+
+-- Python
+vim.g.python_highlight_all = 1
+
 -- Status line
 require('lualine').setup {
   options = {
@@ -61,9 +69,6 @@ require('lualine').setup {
     }
   }
 }
-
--- Terraform
-vim.g.terraform_fmt_on_save = 1
 
 -- Language servers
 --local lspconfig = require('lspconfig')

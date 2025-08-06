@@ -112,3 +112,5 @@ export AZURE_TENANT_ID=3e04753a-ae5b-42d4-a86d-d6f05460f9e4
 
 # Pipenv
 eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
