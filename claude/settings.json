@@ -1,0 +1,25 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.rdsec.trendmicro.com/prod/aiendpoint/",
+    "ANTHROPIC_AUTH_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQUktMTc2Mjk2NTUyNzAzNiIsInJvbGVzIjpbIjM1Il0sInVzZXJfaWQiOjU1MSwidXNlcm5hbWUiOiJ6YWNoYXJ5dyIsInJvbGVfbmFtZXMiOlsiUk9QLWFpZW5kcG9pbnQtVXNlciJdLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcwNzQxNTI3LCJqdGkiOiIwZmE5NDEzNi1iZmU2LTExZjAtYTdjZC01YTVkMmRkMGJmMDIiLCJ2ZXJzaW9uIjoiMjAyNC0xMS0wMSJ9.AP7SzloT0FZ1PTTODCfDfFUF4sYkwjNpA_PmGZVw8Nc",
+    "ANTHROPIC_MODEL": "claude-4.5-sonnet",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-4.1-opus",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-4.5-sonnet",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-4.5-haiku",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-4.5-sonnet",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read(~/work/ztna/**)",
+      "Bash(curl)",
+      "Bash(find)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:adc.github.trendmicro.com)"
+    ]
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "autoUpdatesChannel": "stable"
+}
