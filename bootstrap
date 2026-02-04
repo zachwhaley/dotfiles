@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # bootstrap shell
 
@@ -99,29 +99,7 @@ stow_dotfiles() {
   done
 }
 
-setup_mac() {
-  os=$(uname -s)
-  if [[ "$os" == "Darwin" ]]; then
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2"
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-    success "setup macos configs\n"
-  fi
-}
-
-set_shell() {
-  local shell=$1
-  check $shell
-  user "set shell to $shell\n"
-  if chsh -s $(cat /etc/shells | grep $shell); then
-    success "shell set"
-  else
-    fail "failed to set shell"
-  fi
-}
-
 echo ''
 
 stow_dotfiles
-setup_mac
-
 success "done!\n"
