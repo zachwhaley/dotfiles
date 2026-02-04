@@ -12,6 +12,7 @@
 	autoSetupRemote = true
 [core]
 	editor = nvim
+	pager = bat
 [alias]
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 	br = branch
@@ -30,7 +31,7 @@
 	pul = pull
 	ds = diff --staged
 	dm = diff origin/main...
-	sh = show
+	sho = show
 	st = status
 	trim = !git fetch --all --prune && git branch -vv | grep -v $(git symbolic-ref --short HEAD) | awk '/.*: gone]/ {print $1}' | xargs git branch -D -v
 [rebase]

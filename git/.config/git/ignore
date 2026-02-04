@@ -12,3 +12,5 @@ cscope.*
 
 .vscode/
 .idea/
+
+**/.claude/settings.local.json
