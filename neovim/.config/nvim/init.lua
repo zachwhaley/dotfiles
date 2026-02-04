@@ -28,7 +28,7 @@ Plug('neovim/nvim-lspconfig')
 Plug('neoclide/coc.nvim', {['branch'] = 'release'})
 Plug('fatih/vim-go', {['for'] = 'go', ['do'] = ':GoUpdateBinaries'})
 --Plug('ray-x/go.nvim', {['for'] = 'go'})
-Plug('hashivim/vim-terraform', {['for'] = 'terraform'})
+Plug('hashivim/vim-terraform', {['for'] = {'terraform', 'hcl'}})
 Plug('pangloss/vim-javascript', {['for'] = 'javascript'})
 Plug('vim-python/python-syntax', {['for'] = 'python'})
 
